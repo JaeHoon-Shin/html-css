@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+
+        동영상 태그 사용하는 방법 (오디오 동일)
+
+        브라우저는 3개의 동영상 확장자명을 지원한다.
+        mp4 : 모든 브라우저 호환
+        ogv : 익스, 사파리 제외
+        webm : 익스, 사파리 제외
+
+        호환성이 향상됨에 따라 mp4가 모든 브라우저 호환으로 되어서 mp4만 사용해도 문제는 없다.
+        
+        video 태그는 단독태그로 실행할수도 있지만, 소스파일이 많을 경우 태그 내부에 source태그를 별도로 사용한다.
+        --------------------------------------------------------------------------------------------------------------
+
+        video 태그에 사용되는 속성
+
+        -controls = 재생, 소리, 화면조정등을 위한 컨트롤창 생성
+        -autoplay = 자동재생 설정 muted설정해야 자동재생
+        -muted = 음소거
+        -loop = 반복
+
+        *브라우저 지침상 동영상을 자동재생 하고싶을 경우 음소거 상태를 만들어야 자동재생 되도록 규정하고 있다.(웹 접근성 지침)
+
+        -poster = 동영상이 시작되기 전에 보여지는 썸네일 이미지
+        (자동재생인 경우에는 확인할 수 없다.)
+        poster는 재생이 시작된 후에는 일시정지나 동영상이 끝나도 나타나지 않는다.
+        img태그처럼 태그로 생성된게 아니기 때문에 css로 크기를 조절 할 수 없다.
+        이미지의 크기조절이 필요하면 이미지태그로 만들거나 그래픽툴에서 사이즈를 변경후에 다시 가져와야한다.
+        --------------------------------------------------------------------------------------------------------------
+
+        -preload : 웹 페이지 로딩시 동영상에 정보를 로드하는 속성
+        
+        none = 동영상에 대한 어떠한 정보도 로드하지 않는다. 대신 재생을 누르면 이후로 동영상에 대한 모든 정보를 로드한다.
+        auto = 웹 페이지 로딩시 동영상에 모든 정보를  다 로드한다.
+        metadata = 웹 페이지 로딩시 동영상에 대한 일부 정보만 로드한다.(동영상의 길이, 크기)
+
+        자동재생 속성을 사용하면서 preload의 값이 none이나 metadata인 경우 auto로 강제 속성 변환
+        값이 없으면 auto가 기본값
+
+        -playsinline : 모바일속성
+        pc나 안드로이드에서 비디오를 볼때에는 자동재생시에 현재 보이는 화면에서 재생이 되지만 ios나 아이폰/아이패드 에서
+        재생하면 전체화면으로 자동 재생이 되는 경우가 있는데 위 속성을 적용하지 않는 이유이다.
+
+        모바일을 지원하는 페이지에서 동영상 자동재생 지원시 autoplay muted loop playsinlin을 묶어서 사용한다.
+
+     -->
+     <video src="video.mp4" controls="controls" autoplay muted></video>
+     <video poster="poster.jpg" controls preload="">
+        <source src="video.mp4">
+        
+     </video>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/bw7KJ7bvd3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

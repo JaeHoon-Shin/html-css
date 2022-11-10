@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.animation.html</title>
+    <style>
+        div.item{
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+            /* animation: box_animation, box_animation2;
+            animation-duration: 1000ms, 2000ms;
+            animation:  box_animation 1000ms, box_animation2 2000ms;
+            애니메이션이 여러개일 경우 ","로 구분*/
+            /* animation: name(필수) duration(필수) timing-function(생략가능) delay(생략가능) iteration-count(생략가능) direction(생략가능) 
+            fill-mode, play-state, timeline은 그룹에 포함하지 않음 
+            순서는 바뀌어도 되지만 duration과 delay는 순서에 조심한다. 값이 하나면 duration값만 값이 두개면 앞에 있는 값이 duration*/
+            animation: box_animation 3000ms 1000ms reverse infinite ease-in-out;
+            animation-play-state: paused;
+        }
+        div.item:hover{
+            animation-play-state: running;
+        }
+        div.box01{
+            background-color: coral;
+            animation-fill-mode: none;
+            animation-timing-function: ease;
+        }
+        div.box02{
+            background-color: rgb(103, 175, 19);
+            animation-fill-mode: backwards;
+            animation-timing-function: ease-in;
+        }   
+        div.box03{
+            background-color: rgb(14, 190, 190);
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+            
+        }
+        div.box04{
+            background-color: rgb(7, 44, 126);
+            animation-fill-mode: both;
+            animation-timing-function: ease-in-out;
+        }
+        div.box05{
+            background-color: rgb(113, 5, 122);
+            animation-timing-function: linear;
+        }
+        div.box06{
+            background-color: rgb(116, 1, 16);
+        }
+        /* 
+            애니메이션은 html요소에 적용되는 css를 다른 css로 제어해서 부드럽게 전환되는 효과를 주며, 
+            transition과 유사한 환경을 가지고 있지만 세부적인 컨트롤, 단독적으로 실행할 수 있는 특징을 가지고 있다.(상위개념)
+
+            이벤트 적용 ->transition
+            페이지 로딩시 바로 실행 -> animation
+
+            transition은 단순한 요소의 속성 변화가 목적이라면 
+            animation은 속성 하나에 스토리(프레임)을 구성해서 스토리내에서 세부적인 움직임을 css를 이용해서 제어할 수 있다.
+
+            -name : keyframes에 연결하는 가장 중요한 속성(필수속성)
+            네이밍은 임의대로 작성하되, 목적에 맞는 네이밍을 하도록 한다.
+
+            -duration 진행시간(필수속성)
+
+            -delay : 지연시간
+
+            -iteration-count : 반복횟수
+            기본값은 1회만 실행하며, 지정된 숫자만큼 실행한다.
+            *무한반복을 위해 9999와 같은 infinite로 설정한다.(초기 메모리 확보 유무가 달라짐 
+            9999로 정해놓을 경우 처음부터 9999개의 메모리를 잡아 놓기 때문에 많은 애니메이션에 9999를 넣으면 사이트가 무거워 진다.)
+
+            -direction : 반복중일때 진행방향 설정
+            normal 기본값 : 0%시작해서 100%종료
+            reverse : 100%시작해서 0%종료
+            alternate : 홀수번(normal), 짝수번(reverse)로 왕복운동
+
+            -fill-mode : 애니메이션이 대기중이거나 종료상태일때 스타일 지정
+            무한반복이거나 delay가 없으면 확인할 수 없다.
+            none 기본값
+                대기 : 시작프레임(0%)에 설정된 스타일을 적용하지 않는다.
+                종료 : 실행 전 스타일을 되돌린 후 종료
+
+            backwords
+                대기 : 시작프레임(0%)에 설정된 스타일을 적용하고 대기
+                종료 : 실행 전 스타일 되돌리고 종료
+            
+            forwards
+                대기 : 시작프레임에 설정된 스타일을 적용하지 않음
+                종료 : 종료되는 프레임의 스타일을 적용하고 종료
+
+            both
+                대기 : 시작프레임에 설정된 스타일 적용 후 대기
+                종료 : 종료프레임에 설정된 스타일 적용 후 종료
+        */
+        @keyframes box_animation{
+            0%{
+                background: black;
+            }
+
+            50%{
+                background-color: red;
+                width: 200px;
+            }
+            100%{
+                background-color: rgb(35, 170, 159);
+                width: 10px;
+            }
+        }
+        @keyframes box_animation2{
+            100%{
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="item box01">box1</div>
+    <div class="item box02">box2</div>
+    <div class="item box03">box3</div>
+    <div class="item box04">box4</div>
+    <div class="item box05">box5</div>
+    <div class="item box06">box6</div>
+
+</body>
+</html>

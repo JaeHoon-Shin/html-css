@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>큐브 만들기</title>
+    <style>
+        div.wrapper{
+            width: 250px;
+            height: 250px;
+            perspective: 500px;
+            position: absolute;
+            left: 15%;
+            top: 25%;
+            transform: translate(-50%,-50%);
+        }
+        /* 포지션 속성으로 가운데 정렬하는 방법 */
+        div.cube{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+
+            transition: 2200ms;
+        }
+        div.item{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            line-height: 250px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        div.front{
+            background-color: coral;
+            transform: rotateY(0deg) translateZ(125px);
+        }
+        div.back{
+            background-color: color(29, 170, 93);
+            transform: rotateY(180deg) translateZ(125px);
+        }
+        div.right{
+            background-color: rgb(106, 122, 10);
+            transform: rotateY(90deg) translateZ(125px);
+        }
+        div.left{
+            background-color: rgb(106, 122, 10);
+            transform: rotateY(-90deg) translateZ(125px);
+        }
+        div.top{
+            background-color: rgb(187, 6, 111);
+            transform: rotateX(90deg) translateZ(125px);
+        }
+        div.bottom{
+            background-color: rgb(187, 6, 111);
+            transform: rotateX(-90deg) translateZ(125px);
+        }
+        div.cube:hover{
+            transform: rotate3d(1,1,0,360deg);
+            /* rotate3d 각축의 앵글을 정하고 회전 */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper"><!-- 원근감이 들어간 영역에 대한 설정 -->
+        <div class="cube">
+            <div class="item front">front</div>
+            <div class="item back">back</div>
+            <div class="item right">right</div>
+            <div class="item left">left</div>
+            <div class="item top">top</div>
+            <div class="item bottom">bottom</div>
+
+        </div>
+    </div>
+</body>
+</html>

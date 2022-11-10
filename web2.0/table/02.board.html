@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블로 게시판 만들기</title>
+    <style>
+        body,html{
+            margin: 0px;
+            padding: 0px;
+        }
+        table{
+            border-spacing: 0px;
+            border-collapse: collapse;
+            width: 1200px;
+            margin: 100px auto;
+        }
+        caption{
+            text-align: left;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        tr.head th{
+            border: solid 1px black;
+            border-bottom: solid 1px #dddddd;
+            height: 50px;
+        }
+        td{
+            border-bottom: solid 1px #dddddd;
+            height: 50px;
+            text-align: center;
+        }
+        .number{
+            width: 100px;
+        }
+        .title{
+            width: 700px;
+        }
+        .name{
+            width: 150px;
+        }
+        .date{
+            width: 150px;
+        }
+        .like{
+            width: 100px;
+        }
+        td.title{
+            text-align: left;
+            text-indent: 20px ; /* 첫줄 들여쓰기 */
+        }
+        td.name,td.date,td.like{
+            color: antiquewhite;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>자유게시판</caption>
+
+        <tr class="head">
+            <th class="number">No</th>
+            <th class="title">제목</th>
+            <th class="name">글쓴이</th>
+            <th class="date">작성시간</th>
+            <th class="like">좋아요</th>
+        </tr>
+        <tr>
+            <td class="number">1</td>
+            <td class="title">내용</td>
+            <td class="name">신재훈</td>
+            <td class="date">2022-11-01</td>
+            <td class="like">35</td>
+        </tr>
+        <tr>
+            <td class="number">2</td>
+            <td class="title">굿</td>
+            <td class="name">신재훈</td>
+            <td class="date">2022-11-02</td>
+            <td class="like">315</td>
+        </tr><tr>
+            <td class="number">3</td>
+            <td class="title">하하하하하핳하하하ㅏ하핳하ㅏ하하ㅏ하</td>
+            <td class="name">신재훈</td>
+            <td class="date">2022-11-03</td>
+            <td class="like">5</td>
+        </tr><tr>
+            <td class="number">4</td>
+            <td class="title">?????????</td>
+            <td class="name">신재훈</td>
+            <td class="date">2022-11-04</td>
+            <td class="like">135</td>
+        </tr>
+    </table>
+</body>
+</html>

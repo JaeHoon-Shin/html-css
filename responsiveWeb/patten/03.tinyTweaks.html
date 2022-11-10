@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.tinyTweaks</title>
+    <style>
+        /* 
+            tinyTweaks은 다른 패턴들과 달리 
+            레이아웃의 변화는 거의 없는 단순한 디자인에 적합하다.
+            레이아웃은 변화하지 않으며, 텍스트의 크기, 이미지의 크기가 디바이스의 크기에 따라
+            변화하는 정도가 끝이다. 원페이지형 레이아웃이나, 레이아웃이 거의 없는 블로그형
+            사이트에 많이 사용된다.
+        */
+        body,html{
+            /* font-size: 62.5%;  1rem = 10px */
+            font-size: 0.5208vw; 
+            /* 
+                폰트사이즈를 반응형으로 변경하기
+                기준이 되는 페이지의 width값을 설정(모바일 기준, pc기준)
+                body의 적용할 폰트 사이즈의 수치 10px
+               
+                ex)1920기준 10px적용 시 = 10/1920 *100;
+                단위는 vw(viewport width)를 사용해서 브라우저의 가로 크기에 대응하도록 한다.
+            */
+        }
+        .wrapper{
+            width: 100%;
+            background: pink;
+            text-align: center;
+            padding: 2rem 0px;
+        }
+        h1{
+            font-size: 5rem;
+        }
+        .text01{
+            font-size: 2rem;
+            margin-bottom:1.5rem;
+        }
+        .text02{
+            font-size: 1rem;
+
+        }
+        @media screen and (max-width:980px) {
+            body,html{
+                font-size: 1.020vw;
+                
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Lorem ipsum dolor sit amet </h1>
+        <p class="text01">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Excepturi minus, perferendis provident nam iure <br>
+            nobis adipisci, dolore quis tempora quisquam, <br>
+            asperiores atque sequi alias est minima aliquam <br>
+            quaerat culpa dolor!
+        </p>
+        <p class="text02">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Excepturi minus, perferendis provident nam iure <br>
+            nobis adipisci, dolore quis tempora quisquam, <br>
+            asperiores atque sequi alias est minima aliquam <br>
+            quaerat culpa dolor!<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Excepturi minus, perferendis provident nam iure <br>
+            nobis adipisci, dolore quis tempora quisquam, <br>
+            asperiores atque sequi alias est minima aliquam <br>
+            quaerat culpa dolor!<br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Excepturi minus, perferendis provident nam iure <br>
+            nobis adipisci, dolore quis tempora quisquam, <br>
+            asperiores atque sequi alias est minima aliquam <br>
+            quaerat culpa dolor!
+        </p> 
+    </div>
+
+</body>
+</html>

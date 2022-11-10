@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        div.container{
+            display: flex;
+            /* flex-wrap: wrap-reverse; */
+            flex-flow: row wrap;
+            /* 
+                flex-wrap : 부모요소가 자식요소들의 컨텐츠들을 한 줄에 다 넣을 수 없을때 줄바꿈 처리 속성
+                *flex는 영역을 넘어간다고 해서 자동으로 줄 바꿈되지 않는다.
+
+                nowarp : 줄 바꿈 처리하지 않음(기본값)
+                wrap : 줄 바꿈 처리(float나 inline-block와 흡사)
+                wrap-reverse : 줄 바꿈을 하지만 아래로 떨어지지 않고 반대로 올라감
+
+                flex-flow : direction wrap의 그룹속성
+                순서는 direction, wrap 순서대로 값이 들어간다
+
+
+            */
+        }
+        /* @media screen and (max-width:768px) {
+            div.container{
+                flex-direction: column;
+            }
+            
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">aaaa</div>
+        <div class="item">bbbbbbbbbsssssssssssssssssssssssssssssssssb</div>
+        <div class="item">cqqqqqqqqqqqqqqqqqqqqqqqqq</div>
+        <div class="item">eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</div>
+    </div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+</body>
+</html>

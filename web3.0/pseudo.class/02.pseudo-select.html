@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02.pesudo-select.html</title>
+    <style>
+        /*
+            가상선택자
+            -사용자의 행동에 영향을 받는 요소를 생성하거나(event)
+            -특정한 위치의 순번을 가진 선택자를 찾을때(select)를 통틀어서 가상 선택자라고 한다.
+
+            이벤트 요소
+            a태그에 들어가는 이벤트 속성
+            -visited : 방문했던 사이트에 대한 선택자
+            -link : 방문하지 않은 사이트에 대한 선택자
+        
+            모든 선택자에 들어가는 이벤트 속성
+            -:hover = 마우스 이벤트(마우스 커서가 해당 태그에 가져다 댔을 때)
+            -:active = 마우스로 클릭한 상태이거나 혹은 해당 요소가 활성화 되어 있을 때
+            -:focus = 키보드 이벤트로 해당 객체가 포커싱되어 있을 때
+            focus는 특정한 행동을 하는 객체(버튼/입력/기능)과 같은 행동을 발생시키는 태그한테만 적용된다.
+            ----------------------------------------------------------------------------------------
+            특정 위치의 선택자를 찾는 선택자
+            ntr-child(n) = 숫자는 순번을 의미하며, 숫자뒤에 n이 붙으면 숫자의 배수가 된다.
+            ex) 2n = 2의 배수(2,4,6,8...) ,odd = 홀수, even = 짝수 처럼 특정한 순번을 선택할수도 있다.
+            last-child = 
+            first-child
+
+            nth-child의 가장 큰 특징은 태그와 선택자와 관계없이 부모요소에서 해당하는 순번만 만족한다.
+            (순번만 만족)
+
+            nth-of-type(n) = 부모요소를 기준으로 자식요소인 선택자 태그중에서만 순번을 찾는다.
+            (type과 순번 모두를 만족)
+        */
+        a:visited{
+            color: red;
+        }
+        a:link{
+            color: aqua;
+        }
+        a{
+            color: black;
+        }
+        input[type=text]:active{
+            background: pink;
+            color: blue;
+            
+        }
+        a:focus{
+            background-color: purple;
+            color: brown;
+            outline: none; /* 보더 같은 테두리 삭제 */
+        }
+        ul{
+            list-style: none;
+            padding: 24px;
+            background-color: coral;
+            width: 100%;
+        }
+        ul li{
+            width: 100%;
+            height: 50px;
+            margin-bottom: 20px;
+            background-color: beige;
+        }
+        ul li:last-child{
+            margin-bottom: 0px;
+        }
+        ul li:nth-child(even){
+            background: lawngreen;
+        }
+        div.list{
+            padding: 25px;
+            background: rgb(206, 180, 185);
+            width: 100%;
+        }
+        div.list p:nth-child(2){
+            background: green;
+        }
+        div.list p:nth-of-type(3){
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <a href="www.235.co.kr">방문하기</a>
+    <br>
+    <a href="https://www.naver.com">방문하기</a>
+    <input type="text" value="클릭">
+    <div>box</div>
+    <p>text</p>
+    <button>button</button>
+
+
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+
+    <div class="list">
+        <p>Lorem</p>
+        <span>Lorem</span>
+        <div>Lorem</div>
+        <span>Lorem</span>
+        <a href="#">Lorem</a>
+        <p>Lorem</p>
+        <p>Lorem</p>
+        <span>Lorem</span>
+    </div>
+
+    
+</body>
+</html>
