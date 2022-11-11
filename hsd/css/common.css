@@ -1,21 +1,29 @@
-body,html{
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: gray;
 }
-.inner{
+
+.inner {
     width: 1170px;
     height: 100%;
     margin: 0px auto;
-    
+    position: relative;
 }
-.hidden{
+
+.hidden {
     width: 1px;
     height: 1px;
     position: absolute;
     overflow: hidden;
-    clip:rect(0px 0px 0px 0px);
+    clip: rect(0px 0px 0px 0px);
     margin: -1px;
 }
+
 /* 
     ir기법
     image replace
@@ -32,7 +40,7 @@ body,html{
 
 */
 /* header */
-header.header-container{
+header.header-container {
     width: 100%;
     height: 120px;
     position: fixed;
@@ -41,20 +49,24 @@ header.header-container{
     background-color: transparent;
     z-index: 999;
 }
-div.header-top-container{
+
+div.header-top-container {
     width: 100%;
     height: 30px;
     display: flex;
     justify-content: flex-end;
 }
-div.header-top-container ul{
+
+div.header-top-container ul {
     display: flex;
     margin-right: 5px;
 }
-ul.header-login li{
+
+ul.header-login li {
     position: relative;
 }
-ul.header-login li a:after{
+
+ul.header-login li a:after {
     content: "";
     width: 1px;
     height: 10px;
@@ -66,24 +78,28 @@ ul.header-login li a:after{
     transform: translateY(-50%);
 }
 
-ul.header-login li a{
-    color:white;
+ul.header-login li a {
+    color: white;
     font-size: 11px;
     display: block;
     padding: 9px 14px;
 }
-ul.header-sns{
+
+ul.header-sns {
     padding: 8px 24px 8px 12px;
 }
-ul.header-sns li{
+
+ul.header-sns li {
     width: 14px;
     height: 14px;
     margin-left: 8px;
 }
-ul.header-sns li:nth-last-child(){
+
+ul.header-sns li:nth-last-child() {
     margin-right: 0px;
 }
-ul.header-sns li a{
+
+ul.header-sns li a {
     display: block;
     width: 100%;
     height: 100%;
@@ -92,14 +108,17 @@ ul.header-sns li a{
     background-size: 56px 14px;
 
 }
-ul.header-sns li:first-child >a{
+
+ul.header-sns li:first-child>a {
     background-position: -28px 0px;
 }
-ul.header-sns li:last-child >a{
-    background-position:-42px 0px;
+
+ul.header-sns li:last-child>a {
+    background-position: -42px 0px;
 }
+
 /* header bottom */
-div.header-bottom-container{
+div.header-bottom-container {
     width: 100%;
     height: 90px;
     background-color: #ffffff;
@@ -109,23 +128,28 @@ div.header-bottom-container{
     box-sizing: border-box;
     justify-content: space-between;
 }
-h1.logo{
+
+h1.logo {
     width: 109px;
     height: 47px;
     background-image: url(../images/h1_logo.png);
     background-repeat: no-repeat;
 }
-nav.gnb{
+
+nav.gnb {
     height: 100%;
 }
-nav.gnb ul{
+
+nav.gnb ul {
     display: flex;
     height: 100%;
 }
-nav.gnb ul li{
+
+nav.gnb ul li {
     padding: 0px 30px;
 }
-nav.gnb ul li >a{
+
+nav.gnb ul li>a {
     display: block;
     width: 100%;
     height: 100%;
@@ -134,7 +158,8 @@ nav.gnb ul li >a{
     align-items: center;
     position: relative;
 }
-nav.gnb ul li > a:after{
+
+nav.gnb ul li>a:after {
     content: "";
     display: block;
     width: 100%;
@@ -146,46 +171,29 @@ nav.gnb ul li > a:after{
     transition: 250ms;
     transform: scaleX(0);
 }
-nav.gnb ul li:hover a:after{
+
+nav.gnb ul li:hover a:after {
     transform: scaleX(1);
 }
-@media screen and (max-width:1170px) {
-    .inner{
-        width: 100%;
-    }
-}
-@media screen and (max-width:1023px) {
-    header.header-container,
-    div.header-bottom-container{
-        height: 60px;
-    }
-    div.header-top-container,
-    nav.gnb{
-        display: none;
-    }
-    h1.logo{
-        width: 25px;
-        height: 25px;
-        background-image: url(../images/m_h1_logo.png);
-        background-size: 25px 25px;
-        
-    }
 
 
-}
-div.mobile-btn{
+/* 모바일 버튼 */
+
+div.mobile-btn {
     width: 25px;
     height: 22px;
-    
+
 }
-div.mobile-btn a{
+
+div.mobile-btn a {
     display: block;
     width: 100%;
     height: 100%;
     position: relative;
     transition: 300ms;
 }
-div.mobile-btn a span{
+
+div.mobile-btn a span {
     display: block;
     width: 100%;
     height: 4px;
@@ -194,31 +202,556 @@ div.mobile-btn a span{
     left: 0px;
     transition: 300ms;
 }
-span.line01{
-    top:0px;
+
+span.line01 {
+    top: 0px;
 }
-span.line02{
-    top:9px;
+
+span.line02 {
+    top: 9px;
 }
-span.line03{
-    top:18px;
+
+span.line03 {
+    top: 18px;
 }
-div.mobile-btn a:hover span.line01{
+
+div.mobile-btn a:hover span.line01 {
 
     top: 9px;
     transition-delay: 300ms;
 }
-div.mobile-btn a:hover span.line02{
+
+div.mobile-btn a:hover span.line02 {
     transform: scaleX(0);
 
 }
-div.mobile-btn a:hover span.line03{
+
+div.mobile-btn a:hover span.line03 {
     transform: rotate(90deg);
     top: 9px;
     transition-delay: 300ms;
 
 }
+
 div.mobile-btn a:hover {
     transition-delay: 800ms;
     transform: rotate(45deg);
+}
+
+/* header end */
+
+/* visual start */
+div.visual-container {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+div.visual-list {
+    width: 100%;
+    height: 100%;
+}
+
+div.visual-item {
+    width: 100%;
+    height: 100%;
+
+}
+
+div.visual-item a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url("../images/visual01.jpg") no-repeat center center /cover;
+
+}
+
+div.visual-control-container {
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 50px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.visual-control-container div.inner {
+    display: flex;
+    align-items: center;
+
+}
+
+div.dot-container ul {
+    display: flex;
+    align-items: center;
+}
+
+div.dot-container ul li {
+    width: 50px;
+    height: 4px;
+    margin-right: 8px;
+
+}
+
+div.dot-container ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+}
+
+div.dot-container ul li:last-of-type {
+    margin-right: 0px;
+}
+
+a.pause-play-btn {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon_play.png) no-repeat;
+    background-size: 60px 30px;
+    margin-left: 30px;
+    transition: 250ms;
+}
+
+a.pause-play-btn:hover {
+    background-position: -30px 0px;
+}
+
+/* article start */
+div.content01-container {
+    background: white;
+
+    padding: 64px 0px;
+
+}
+
+
+div.intro-container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 64px;
+}
+
+.item-image {
+    padding-top: 62.1%;
+    height: 0px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div.item-text {
+    background-color: #eeeeee;
+    padding: 30px 26px 26px;
+
+}
+
+h2.item-title {
+    font-size: 24px;
+
+}
+
+.item-title span {
+    display: block;
+    color: #333333;
+}
+
+.content-item {
+    flex-basis: 50%;
+    flex-grow: 1;
+    border-bottom: solid 5px #333333;
+    position: relative;
+    height: 100%;
+}
+
+.content-item:nth-of-type(1) {
+    margin-right: 2.7%;
+}
+
+.content-item:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: gold;
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    transition: 300ms;
+    transform: scaleX(0);
+}
+
+.content-item:hover:after {
+    transform: scaleX(1);
+}
+
+.menu {
+    background-image: url(../images/main_img_01.jpg);
+}
+
+.local {
+    background-image: url(../images/main_img_02.jpg);
+}
+
+div.item-icon {
+    display: flex;
+    font-size: 13px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+div.item-icon:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: url(../images/btn_link.png) no-repeat 0px center / 40px 20px;
+}
+
+.content-item:hover div.item-icon:before {
+    background-position: -20px 0px;
+}
+
+/* franchise */
+
+section.franchise-container {
+    display: flex;
+    /* flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+}
+
+div.content-title-box {
+    background: gold;
+    padding: 60px 30px;
+    margin-right: 2.7%;
+}
+
+h2.content-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2.content-title:after {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    background-color: #333333;
+    margin-top: 40px;
+}
+
+p.content-text {
+    font-size: 15px;
+    color: #333333;
+    initial-letter: 150%;
+}
+
+div.franchise-list {
+    display: flex;
+    flex-grow: 1;
+}
+
+div.franchise-list.item-title {
+    font-size: 20px;
+}
+
+.franchies {
+    background-image: url(../images/main_img_03.jpg);
+}
+
+.review {
+    background-image: url(../images/main_img_04.jpg);
+}
+
+/* franchies end */
+/*  brand start  */
+section.brand-container {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+div.brand-dg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url(../images/main_visual_02.jpg) no-repeat center center / cover;
+    transition: 2200ms;
+    z-index: 1;
+}
+
+div.brand-dg:hover {
+    transform: scale(1.05);
+}
+
+section.brand-container div.content-title-box {
+    width: 400px;
+    height: 100%;
+    background: rgba(33, 33, 33, 0.8);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    padding-top: 90px;
+    box-sizing: border-box;
+}
+
+section.brand-container .content-title,
+section.brand-container .content-text {
+    color: #ffffff;
+}
+
+section.brand-container .content-title:after {
+    background-color: white;
+}
+
+a.brand-link-btn {
+    display: inline-block;
+    padding: 20px 50px;
+    border: solid 2px #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    position: absolute;
+    left: 30px;
+    bottom: 60px;
+    transition: 300ms;
+}
+
+a.brand-link-btn:hover {
+    color: #333333;
+    background: #ffffff;
+}
+
+/* brand end */
+/* food */
+div.content02-container {
+    width: 100%;
+    background: #ffffff;
+    padding: 60px 0px 110px;
+}
+
+section.food-container {
+    width: 100%;
+    height: 480px;
+    display: flex;
+}
+
+section.food-container div.item-image {
+    width: 74.3%;
+    height: 100%;
+    background: url(../images/main_img_05.jpg) no-repeat;
+    background-size: cover;
+    padding: 0px;
+}
+
+section.food-container div.content-title-box {
+    width: 400px;
+    height: 100%;
+    background: #eeeeee;
+    position: relative;
+    border-bottom: solid 5px #333333;
+    box-sizing: border-box;
+    padding: 60px 30px;
+
+}
+
+section.food-container div.content-title-box:after {
+    content: "";
+    background: gold;
+    display: block;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    left: 0px;
+    bottom: -5px;
+    transition: 300ms;
+    transform: scaleX(0);
+}
+
+section.food-container div.item-icon {
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+}
+
+div.food-container a {
+    position: ab;
+}
+
+section.food-container:hover div.content-title-box:after {
+    transform: scaleX(1);
+}
+
+section.food-container:hover div.item-icon:before {
+    background-position: -20px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media 반응형 */
+@media screen and (max-width:1190px) {
+    .item-title span {
+        display: inline;
+        font-size: 18px;
+    }
+
+    /*     div.visual-control-container{
+        display: none;
+    } */
+}
+
+@media screen and (max-width:1169px) {
+    .inner {
+        width: 100%;
+    }
+
+    div.content01-container {
+        padding-top: 30px 0px;
+    }
+
+    div.intro-container {
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width:1023px) {
+
+    header.header-container,
+    div.header-bottom-container {
+        height: 60px;
+    }
+
+    div.header-top-container,
+    nav.gnb {
+        display: none;
+    }
+
+    h1.logo {
+        width: 25px;
+        height: 25px;
+        background-image: url(../images/m_h1_logo.png);
+        background-size: 25px 25px;
+
+    }
+
+    div.visual-container {
+        height: 380px;
+    }
+
+    div.visual-control-container div.inner {
+        width: 769px;
+    }
+
+    div.content-title-box {
+        padding: 60px 10px;
+        letter-spacing: -1px;
+    }
+
+    h2.content-title {
+        font-size: 28px;
+    }
+    section.food-container div.content-title-box p.content-text-span{
+        display: inline;
+    }
+}
+
+@media screen and (max-width:768px) {
+    div.visual-item a {
+        background-image: url("../images/movbile-visual01.jpg");
+    }
+
+    div.visual-control-container div.inner {
+        width: 100%;
+    }
+
+    section.franchise-container {
+        padding: 0px;
+        max-width: 640px;
+        margin: 0px auto;
+        flex-direction: column;
+    }
+
+    div.content-title-box {
+        margin-right: 0px;
+        margin-bottom: 12px;
+    }
+
+    section.brand-container {
+        height: 550px;
+        padding: 35px 3.2%;
+        box-sizing: border-box;
+    }
+
+    section.brand-container div.content-title-box {
+        width: 100%;
+        padding: 60px 20px;
+    }
+    /* food */
+    section.food-container{
+        flex-direction: column;
+        height: auto;
+        max-width: 640px;
+        margin: 0px auto;
+        padding: 0px 60px;
+        box-sizing: border-box;
+    }
+    section.food-container div.item-image{
+        height: 0px;
+        padding-bottom: 55.6%;
+        width: 100%;
+    }
+    section.food-container div.content-title-box{
+        width: 100%;
+        height: auto;
+    }
+    section.food-container div.content-title-box p.content-text{
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (max-width:414px) {
+
+
+    div.intro-container {
+        flex-direction: column;
+        padding-top: 0px 15px;
+    }
+
+    .content-item:nth-of-type(1) {
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+
+    section.franchise-container {
+        padding: 0px;
+    }
+
+    div.content-title-box {
+        height: 450px;
+    }
+
+    div.franchise-list {
+        margin-top: -120px;
+        padding: 0px 15px;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+
 }
