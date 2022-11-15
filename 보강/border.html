@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        div {
+            border: solid 1px black;
+            border-style: solid;
+            border-radius: 50px;
+            border-color: black;
+            height: 100px;
+            width: 100px;
+            /* box-shadow: x y blur color; */
+            box-shadow: 10px 10px 10px gray;
+            /* background-image: url(./home_FILL0_wght400_GRAD0_opsz48.svg);
+            background-repeat: no-repeat; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        div::before{
+            /* content: url('home_FILL0_wght400_GRAD0_opsz48.svg');
+            display: block; */
+            content: "star";
+            font-family: 'Material Symbols Outlined';
+            font-size: 20px;
+            
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./home_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+    <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+        <path d="M11 39h7.5V26.5h11V39H37V19.5L24 9.75 11 19.5Zm-3 3V18L24 6l16 12v24H26.5V29.5h-5V42Zm16-17.65Z" />
+    </svg>
+    <div>
+        
+    </div>
+
+</body>
+
+</html>
