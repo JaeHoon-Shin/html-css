@@ -1,36 +1,347 @@
 @import url(./reset.css);
+/* @import url(./font.css); */
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* input text 설정 */
+input[type=text] {
+    margin-top: 15px;
+    border-style: none;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
 
 header {
     width: 100%;
-   /*  background-color: #000; */
+    background-color: #000;
 
-    /* position: absolute;
-    left: 0px;
-    bottom: 0px; */
     div.header-top {
-        width: 100%;
-        margin: 28px;
+        padding: 28px;
         display: flex;
+
         justify-content: space-between;
 
         p {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            color: #000;
-            font-weight: 400;
-        }
-
-        a {
-            background: url("../img/tissot_logo.jpg") no-repeat ;
-
-            height: 50px;
-
-        }
-
-        div {
-            p {
-                color: #000;
+            a {
+                color: #fff;
             }
+        }
+    }
+
+
+    div.header-bottom {
+        width: 100%;
+        padding-bottom: 28px;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+            width: 15%;
+
+            li {
+                a {
+                    color: #fff;
+                }
+            }
+
+
+        }
+    }
+}
+
+main {
+
+    div.main-container {
+        width: 100%;
+
+        /* 메인 이미지 */
+        div.visual-content {
+            padding: 0px 28px 0px 28px;
+            background: url(../img/model.jpg) no-repeat;
+            height: 845px;
+            display: flex;
+            align-items: center;
+
+            ul.visual-arrow-box {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+
+        /* 시계 컨테이너 */
+        div.content-container {
+            margin: 170px 210px 170px 210px;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            div.content01 {
+
+                width: 100%;
+                text-align: center;
+
+                div.text-box {
+                    margin-bottom: 94px;
+                    width: 100%;
+
+                    p:nth-child(1) {
+                        font-size: 28px;
+                        font-weight: 700;
+                        line-height: 34px;
+                    }
+
+                    p:nth-child(2) {
+                        font-size: 22px;
+                        font-weight: 400;
+                        line-height: 27px;
+                    }
+                }
+
+                div.back-img-box {
+                    width: 100%;
+                    margin: 0 auto;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+
+            /* 시계 목록 박스 */
+            div.watch-content-box {
+                margin-top: 170px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                ul.watch-text {
+
+                    margin: 0 auto;
+                    display: flex;
+                    width: 33%;
+                    justify-content: space-around;
+
+                    li {
+                        a {
+                            font-size: 28px;
+                        }
+                    }
+                }
+
+                div.watch-box {
+                    width: 100%;
+                    margin-top: 75px;
+
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        text-align: center;
+
+                        li {
+                            p {
+                                margin-top: 35px;
+                                font-size: 22px;
+                                line-height: 27px;
+                            }
+
+                            img {
+                                width: 100%;
+                            }
+
+                            div {
+                                p {
+                                    font-size: 19px;
+                                    margin-bottom: 50px;
+                                }
+
+                                span {
+
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                /* 시계사진 밑에 버튼  */
+                div.el-box {
+                    margin-top: 30px;
+                    display: flex;
+                    justify-content: center;
+
+                    ul {
+                        display: flex;
+
+                        li:nth-child(2) {
+                            margin: 0px 16px 0px 16px;
+                        }
+
+                    }
+
+                }
+
+                /* 카테고리 텍스트 */
+                div.category-text {
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 44px;
+                    text-align: center;
+                    margin-bottom: 92px;
+                }
+
+            }
+
+            div.news-container {
+                background-color: #F5F5F566;
+                width: 100%;
+                margin-top: 176px;
+                display: flex;
+                position: relative;
+                left: 0;
+                bottom: 0;
+
+                div.news {
+                    display: flex;
+                    text-align: center;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 50%;
+
+                    span {
+                        font-weight: 700;
+                        font-size: 22px;
+                        line-height: 27px;
+                        margin: 48px 0px 48px 0px;
+                    }
+
+                    p {
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                }
+
+                div.store {
+                    display: flex;
+                    text-align: center;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 50%;
+
+                    span {
+                        font-weight: 700;
+                        font-size: 22px;
+                        line-height: 27px;
+                        margin: 48px 0px 48px 0px;
+                    }
+
+                    p {
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                }
+            }
+
+            div.news-container::after {
+                content: "";
+                height: 100%;
+                width: 1px;
+                display: block;
+                background-color: #000;
+                position: absolute;
+                left: 50%;
+                bottom: 0%;
+            }
+        }
+
+
+
+
+    }
+}
+
+footer {
+
+    .as-icon {
+        width: 100%;
+        background-color: #F5F5F566;
+        padding: 40px 0px;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+
+        li {
+            a {
+
+                p {
+                    margin-top: 10px;
+
+                }
+            }
+        }
+    }
+
+    div.follow {
+        margin: 49px 0px 65px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 18px;
+            line-height: 22px;
+
+        }
+
+        ul {
+            width: 33%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 17px;
+            margin-bottom: 64px;
+
+            li {
+
+                transition: 10s;
+
+            }
+
+            li:hover a img {
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    .footer-bottom {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        padding: 22px 0px;
+        background-color: #000;
+
+        /* width: 100%; */
+        span {
+            color: #fff;
+
+        }
+
+        p {
+            margin-top: 50px;
+            color: #fff;
         }
     }
 }

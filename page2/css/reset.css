@@ -22,8 +22,8 @@ time, mark, audio, video {
 	vertical-align: baseline;
     /* font-size: 12px; */
     color:#373737;
-    font-family: NotoSans, AppleGothic, Malgun Gothic, "맑은 고딕",
-        sans-serif;
+   /*  font-family: NotoSans, AppleGothic, Malgun Gothic, "맑은 고딕",
+        sans-serif; */
 }
 a{
     text-decoration: none;
