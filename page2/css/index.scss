@@ -1,0 +1,36 @@
+@import url(./reset.css);
+
+header {
+    width: 100%;
+   /*  background-color: #000; */
+
+    /* position: absolute;
+    left: 0px;
+    bottom: 0px; */
+    div.header-top {
+        width: 100%;
+        margin: 28px;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            color: #000;
+            font-weight: 400;
+        }
+
+        a {
+            background: url("../img/tissot_logo.jpg") no-repeat ;
+
+            height: 50px;
+
+        }
+
+        div {
+            p {
+                color: #000;
+            }
+        }
+    }
+}

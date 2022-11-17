@@ -1,24 +1,164 @@
 <!DOCTYPE html>
 <html lang="kr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      @media screen and {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .issue-1 {
+      max-width: 1400px;
+      margin: 100px auto;
+    }
+
+    .issue-1 ul {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      list-style-type: none;
+      /* justify-content: center; */
+      /* flex 가로 */
+      align-items: center;
+      /* flex 세로 */
+      flex-direction: column;
+    }
+
+    .issue-1 ul>li {
+      width: 30%;
+      height: 300px;
+      background-color: aquamarine;
+    }
+
+    .issue-2 {
+      max-width: 1400px;
+      margin: 100px auto;
+
+    }
+
+    .issue-2 li {
+      display: flex;
+    }
+
+    .issue-2 li div {
+      width: 50%;
+      height: 200px;
+    }
+
+    .issue-2 li div:nth-child(1) {
+      height: 200px;
+      background-color: blueviolet;
+    }
+
+    .issue-2 li div:nth-child(2) {
+      height: 200px;
+      background-color: tomato;
+    }
+
+    /* 순서변경 */
+    .issue-2 li:nth-child(2) div:nth-child(1) {
+      order: 2;
+    }
+
+    .issue-2 li:nth-child(2) div:nth-child(2) {
+      order: 1;
+    }
+
+    /* 포지션 */
+    body{
+      height: 5000px;
+    }
+    .issue-3{
+      max-width: 1400px;
+      margin: 100px auto;
+      border: 1px solid black;
+      height: 500px;
+    }
+    .issue-3 .pos1{
+      width: 100px;
+      height: 100px;
+      position: fixed;
+      right: 5%;
+      bottom: 5%;
+      background-color: red;
+    }
+    .issue-3 .pos2{
+      position: sticky;
+      top: 100px;
+      background-color: blue;
+    }
+    @media screen and (max-width:1400px) {
+      .issue-3 .pos1{
+        position: static;
       }
-    </style>
-  </head>
-  <body>
-    <article>
-      <p></p>
-    </article>
-    <div>
-      <div>
-        <div></div>
-      </div>
-    </div>
-    <div></div>
-  </body>
+    }
+    /* picture */
+    .issue-4{
+      max-width: 1400px;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <p>responsice</p>
+    <ul>
+      <li>가로유형 콘텐츠 세로 전환</li>
+      <li>콘텐츠 순서 바꾸기</li>
+      <li>포지션 해제</li>
+      <li>picture 태그 활용한 각 디바이스 이미지 출력</li>
+      <li>반응형 코드 추가 또는 변경</li>
+    </ul>
+  </article>
+  <section class="issue-1">
+    <h2>flex(가로유형 컨텐츠 세로 전환)</h2>
+    <ul>
+      <li>이미지1</li>
+      <li>이미지2</li>
+      <li>이미지3</li>
+    </ul>
+  </section>
+
+  <section class="issue-2">
+    <h2>flex(컨텐츠 순서 바꾸기)</h2>
+    <ul>
+      <li>
+        <div>이미지</div>
+        <div>내용....</div>
+      </li>
+      <li>
+        <div>이미지</div>
+        <div>내용...</div>
+      </li>
+    </ul>
+  </section>
+  /* 순서변경 */
+  .issue-2 li:nth-child(2) div:nth-child(1) {
+    order: 2;
+  }
+
+  .issue-2 li:nth-child(2) div:nth-child(2) {
+    order: 1;
+  }
+
+
+
+  <section class="issue-3">
+    <h2>포지션(absolute, relative, fixed, static, sticky)</h2>
+
+    <div class="pos1">이미지</div>
+    <div class="pos2">내용....</div>
+
+  </section>
+  <section class="issue-4">
+    <h2>picture 태그</h2>
+    <picture>
+      <source media="(max-width:1400px)" srcset="../ex/img/img-01.jpg">
+      <img src="../ex/img/img-02.jpg" alt="">
+    </picture>
+  </section>
+
+</body>
+
 </html>

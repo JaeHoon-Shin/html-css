@@ -1,0 +1,196 @@
+@import url("./font.css");
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure {
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+a {
+    color: #555;
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+::after,
+::before a,
+i,
+em,
+strong,
+b,
+code {
+    display: inline-block;
+}
+
+/* header */
+
+/* header nav start */
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    z-index: 1;
+}
+
+header>div {
+    width: 86%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>div>nav {
+    position: relative;
+
+}
+
+header>div>nav>button {
+    width: 26px;
+    height: 16px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+header>div>nav>button>span {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    border-top: 2px solid #fff;
+    transition: 300ms;
+}
+
+header>div>nav>button>span:nth-child(1) {
+    top: 0;
+}
+
+header>div>nav>button>span:nth-child(2) {
+    top: 50%;
+}
+
+header>div>nav>button>span:nth-child(3) {
+    top: 100%;
+}
+
+header>div>nav>button:hover>span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+header>div>nav>button:hover>span:nth-child(2) {
+    transform: scaleX(0);
+}
+
+header>div>nav>button:hover>span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+header>div>nav>button:hover+div {
+    display: block;
+}
+
+header>div>nav>div {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    background-color: #000;
+    display: none;
+}
+
+header>div>nav>div>a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* header nav end*/
+
+/* header h1 start */
+header>div>h1 {}
+
+header>div>h1>a {
+    font-family: "Broadway";
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* header h1 end*/
+
+/* header lang start */
+header>div>div.lang {
+    position: relative;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+header>div>div.lang:hover>ul {
+    display: block;
+}
+
+header>div>div.lang>p:after {
+    content: "▶";
+    font-size: 6px;
+    transform: scale(0.8);
+}
+
+header>div>div.lang>ul {
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    border: 1px solid #ddd;
+    border-bottom-width: 0;
+    transform: translateY(100%);
+    display: none;
+}
+
+header>div>div.lang>ul>li {
+    border-bottom: 1px solid #ddd;
+    padding: 6px 20px;
+}
+
+/* header lang end*/
+
+/* footer */
+
+div.footer-back {
+    background-color: #b9c4d8;
+    width: 100%;
+    text-align: center;
+}
+div.footer-back span {
+    display: block;
+    padding: 55px 0px;
+}
+@media (max-width:767px){}

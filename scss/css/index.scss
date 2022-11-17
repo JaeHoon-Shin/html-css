@@ -1,0 +1,38 @@
+$size:1400px;
+@mixin flex() { /* 정의 */
+    display : flex;
+    align-items : center;
+}
+@include flex(); /* 호출 */
+
+
+main {
+    background-color: gainsboro;
+}
+
+article {
+    max-width: $size;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {}
+
+    ul {
+        display: flex;
+
+        li {
+            /* display: flex;
+            align-items: center; */
+            @include flex;
+            width: 30%;
+            font-size: 40px;
+            /* & = 상위 부모  */
+            &::after{
+                content: "";
+                flex-grow: 1;
+                border: 1px solid #000;
+            } 
+        }
+    }
+
+}

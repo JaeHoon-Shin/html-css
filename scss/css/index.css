@@ -1,0 +1,27 @@
+@charset "UTF-8";
+main {
+  background-color: gainsboro;
+}
+
+article {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+article ul {
+  display: flex;
+}
+article ul li {
+  /* display: flex;
+  align-items: center; */
+  display: flex;
+  align-items: center;
+  width: 30%;
+  font-size: 40px;
+  /* & = 상위 부모  */
+}
+article ul li::after {
+  content: "";
+  flex-grow: 1;
+  border: 1px solid #000;
+}/*# sourceMappingURL=index.css.map */

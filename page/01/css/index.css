@@ -1,0 +1,245 @@
+@import url(./common.css);
+
+/* index.css */
+div.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* visual start */
+div.visual-container {
+    background-image: url(../img/img-visual.jpg);
+    height: 1000px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+div.visual-container h2 {
+    font-size: 80px;
+    color: #f5f4a5;
+    margin-bottom: 55px;
+    animation: h2-ani 10s 9999;
+}
+@keyframes h2-ani{
+    100%{
+        transform: scaleY(0);
+    }
+}
+div.visual-container a:hover p{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+div.visual-container p {
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 24px 54px;
+    box-sizing: border-box;
+}
+
+div.content-container {
+    width: 100%;
+    height: 100%;
+    margin: 0px 310px 0px 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+/* content01 start */
+div.content01-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 66%;
+
+}
+
+div.content01-lorem {
+    display: flex;
+    width: 100%;
+    padding-top: 120px;
+    align-items: center;
+}
+
+div.content01-container div:nth-child(2) div:nth-child(1) {
+    order: 2;
+}
+
+div.content01-container div:nth-child(2) div:nth-child(2) {
+    order: 1;
+}
+
+div.content01-lorem > div {
+    width: 50%;
+}
+
+.content-img {
+    width: 100%;
+}
+
+div.content01-lorem div:nth-child(2) {
+    padding-left: 120px;
+}
+
+div.content01-container div:nth-child(2) div:nth-child(2) {
+    padding-left: 0px;
+}
+
+h2.content-title {
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+div.content-text>p {
+    color: #555;
+    margin-bottom: 50px;
+}
+
+h2.content-title::after {
+    display: block;
+    content: "";
+    width: 60%;
+    height: 1px;
+    background-color: #000;
+    margin: 0 auto;
+}
+
+div.content-text>span::after {
+    content: ">";
+    display: block;
+    width: 0px;
+    height: 0px;
+    background-color: #000;
+    position: relative;
+    left: 5px;
+    bottom: 10px;
+}
+
+div.content-text span {
+    display: flex;
+    align-items: center;
+
+}
+/* content02 start */
+div.content02-container {
+    background-color: #d6f6f3;
+    width: 100%;
+/*     height: 100%; */
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+div.content02-text-box {
+    width: 66%;
+    margin-top: 140px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.content02-text-box>h3 {
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+div.content02-text-box>h3::after {
+    content: "";
+    display: block;
+    background-color: #000;
+    width: 100px;
+    height: 1px;
+    position: relative;
+    left: 30%;
+    bottom: 0;
+    margin: 40px 0px;
+}
+/* content02 img start */
+div.content02-imgbox{
+    width: 66%;
+    text-align: center;
+}
+div.content02-imgbox>ul {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: space-between;
+}
+
+div.content02-imgbox > ul > li {
+    margin: 80px 0px 165px 0px;
+    
+}
+
+div.content02-imgbox ul li img{
+    width: 320px;
+    height: 320px;
+}
+div.content02-imgbox ul li:nth-child(2) img{
+    border-radius: 50%; 
+}
+div.content02-imgbox ul li:nth-child(3) img{
+    border-radius: 50%;
+}
+div.content02-imgbox p{
+    margin-top: 35px;
+}
+
+
+@media (max-width:767px){
+    div.main-container{
+        width: 100%;
+    }
+    div.content01-container{
+        width: 100%;
+    }
+    
+    div.content01-lorem {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    div.content01-lorem div:nth-child(2) {
+        padding-left: 0px;
+    }
+    div.content01-container div:nth-child(2) div:nth-child(1) {
+        order: 1;
+    }
+    
+    div.content01-container div:nth-child(2) div:nth-child(2) {
+        order: 2;
+    }
+}
+@media (max-width:1190px){
+    div.content02-imgbox>ul{
+        display: flex;
+        flex-wrap: wrap;
+       justify-content: space-around;
+    }
+}
