@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg width="1000" height="800">
+        <circle cx="200" cy="200" r="50" fill="transparent" stroke="#f00"></circle>
+        <rect x="300" y="150" width="100" height="100"></rect>
+        <line x1="600" y1="150" x2="800" y2="150" stroke="#f00"></line>
+        <text x="300" y="400">SVG</text>
+        <image href="./img/img-02.jpg" x="200" y="200" width="100"></image>
+
+        <mask is="im">
+            <text x="300" y="700" fill="white" font-size="200">SVG</text>
+        </mask>
+        <image mask="url(im)" href="./img/img-02.jpg" x="100" y="300" width="200"></image>
+    </svg>
+    <hr>
+    <svg xmlns="http://www.w3.org/2000/svg" height="200" width="200" viewbox="0 0 48 48" class="home">
+        <path d="M11 39h7.5V26.5h11V39H37V19.5L24 9.75 11 19.5Zm-3 3V18L24 6l16 12v24H26.5V29.5h-5V42Zm16-17.65Z" />
+    </svg>
+    <style>
+        .home{}
+        .home > path{
+            fill: transparent;
+            stroke: #000;
+            stroke-dasharray: 200px;
+            stroke-dashoffset: 200px;
+            animation: svg 1s forwards ;
+        }
+        @keyframes svg{
+            0%{stroke-dashoffset: 200px;}
+            100%{stroke-dashoffset: 0px;}
+        }
+    </style>
+</body>
+</html>
