@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article>
+
+        <h2>block , none</h2>
+
+        <button id="ex_btn">버튼</button>
+        <div id="ex_con" style="padding:60px;border:2px solid #000">
+            contents
+        </div>
+    </article>
+    <script>
+        let toggle = 0;
+        /* const elEx = document.getElementById('ex_btn'); */
+        ex_btn.onclick = function () {
+            console.log(toggle)
+            if (toggle == 0) {
+                ex_con.style = 'padding:60px; border:2px solid #000; display:none';
+                toggle = 1;
+                console.log(toggle)
+            }
+            else if(toggle == 1 )
+            {
+                ex_con.style = 'padding:60px; border:2px solid #000; display:block';
+                toggle = 0;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

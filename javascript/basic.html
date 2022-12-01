@@ -1,36 +1,107 @@
 <!DOCTYPE html>
-<html lang="kr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script defer src="url.js"></script>
+    
+
 </head>
 <body>
-    <div>변수</div>
-    <script>
-        /* const A ="문자열";
-        let b = 124;
-        b = 100;
-        console.log( (A+b)); */
 
-        const elDiv = document.querySelector('div');
-        
-        /* let a =40;
-        b=20;
-        if(a<20){
-            elDiv.textContent= "진실";
-        }
-        else{
-            elDiv.textContent= "거짓";
-        } */
-         let gender = prompt("성별을 적어주세여");
-         if(gender=="남자"){
-            console.log("남자입니다")
-         }else{
-            console.log("여자입니다")
-         }
-    </script>
+<!-- basic.html -->
+<div>변수를 활용한 값 - </div>
+
+<script>
+    // 문자 = '문자열';
+    // 문자 = '문자열 12354';
+
+    // 숫자 = 34555;
+    // 숫자 = 100;
+
+    // 변수(const, let, var)
+
+    const A = "문자열";
+    let B = 12344;
+        B = 100;
+    
+    // div{ 명령 }
+    const elDiv = document.querySelector('div');
+    elDiv.textContent += B;
+
+    // 산술연산자 +,-,*,/,%
+    // 증감연산자 ++,--
+    // 비교연산자 < , > , >=, <= , ==, ===,!=,!==
+    // 관계연산자 &&, ||
+
+    let a = 10, b = 20;
+    elDiv.textContent = a + b;
+    elDiv.textContent += ','+ (a - b);
+    elDiv.textContent += ','+ (a * b);
+    elDiv.textContent += ','+ (a / b);
+    elDiv.textContent += ','+ (a % b);
+
+    // ++a, a++
+    elDiv.innerHTML += '<br>'+ (++a);
+    elDiv.innerHTML += ','+ (a++);
+    elDiv.innerHTML += ','+ (a);
+
+    elDiv.innerHTML += '<br>'+ (a > b);
+    elDiv.innerHTML += '<br>'+ (a < b);
+    elDiv.innerHTML += '<br>'+ (a == b);
+    elDiv.innerHTML += '<br>'+ (a != b);
+
+    a='20';
+    elDiv.innerHTML += '<br>'+ (a == b);
+    elDiv.innerHTML += '<br>'+ (a === b);
+    elDiv.innerHTML += '<br>'+ (a !== b);
+
+    elDiv.innerHTML += '<br>'+ (a >= b);
+    a = 10;                        
+    elDiv.innerHTML += '<br>'+ (a >= b);
+    
+
+    let x = (a < b) && (a == b); //false
+    let z = (a < b) || (a == b); //true
+
+    // 비교, 관계 (true, false)  boolean
+
+    // 성인인증, 홀수짝수, 성별, 자격증수, 연령, 구매여부, 
+    // 아이디/패스워드, 수신동의......
+
+    let user = prompt('나이를 입력해주세요!');
+    let blen = 19 < user;
+
+    if(blen){
+        console.log('어서오세요~~고객님^^');
+    }else{
+        console.log('오호~~~~이놈~~~~~');
+    }
+
+
+    if(조건){
+
+    }else if(조건){
+
+    }else if(조건){
+
+    }else{
+
+    }
+
+// 배열
+let array = [10,20,30,40,50,60,70,80,90,100];
+
+
+</script>
+
+
+
+
     
 </body>
 </html>
+

@@ -1,38 +1,73 @@
-$size:1400px;
-@mixin flex() { /* 정의 */
-    display : flex;
-    align-items : center;
+
+// index.scss
+
+$size : 1400px;
+$bg : #ddd;
+$font-name: 'dotum';
+
+@mixin flex($n:flex, $a:flex-start) {
+    display: $n;
+    align-items: $a;
+
+    @content;
 }
-@include flex(); /* 호출 */
 
 
-main {
-    background-color: gainsboro;
+
+main{
+    background-color: $bg;
+    font-family: $font-name;
 }
 
 article {
     max-width: $size;
-    margin: 0 auto;
+    margin:0 auto;
     text-align: center;
 
-    h2 {}
+    h2{ max-width: $size; }
+    ul{
+        @include flex(){ justify-content: center  }       
+        li{
+            @include flex(flex,center);
 
-    ul {
-        display: flex;
-
-        li {
-            /* display: flex;
-            align-items: center; */
-            @include flex;
-            width: 30%;
-            font-size: 40px;
-            /* & = 상위 부모  */
+            width:30%;
             &::after{
-                content: "";
+                content:'';
                 flex-grow: 1;
-                border: 1px solid #000;
-            } 
+                border-bottom:1px solid #000;
+            }
         }
     }
-
 }
+
+.bg{
+    margin:100px auto;
+    width:1400px;
+    >div{
+        display: flex;
+        p{
+            width:300px; height:200px;
+        }
+
+       
+
+        
+        
+        /* @each $i,$name in $array{
+            p:nth-of-type(#{$i}){
+                background: url('../img/#{$name}') 0 0 / cover no-repeat;
+            }
+        } */
+
+        
+
+        
+    }
+}
+$array : (1:'01.jpg', 2:'02.jpg', 3:'03.jpg');
+@for $i from 1 to 4{
+    p:nth-of-type(#{$i}){
+        background: url('../img/#{nth($array,$i)}') 0 0 / cover no-repeat;
+    }
+}
+@import "_media";

@@ -1,308 +1,273 @@
 <!DOCTYPE html>
-<html lang="kr">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <article class="ex1">
-        <h2>1에서 100까지 출력하시오.<button>출력</button></h2>
-        <div></div>
-    </article>
-    <article class="ex2">
-        <h2>1에서 100까지 수 중에서 짝수를 출력하시오.<button>출력</button></h2>
-        <div></div>
-    </article>
-    <article class="ex3">
-        <h2>1에서 100까지 수 중에서 끝자리가 3,6,9를 찾아 출력하시오<button>출력</button></h2>
-        <div></div>
-    </article>
-    <script>
-        const ex1 = document.querySelector('.ex1 div');
-        const ex2 = document.querySelector('.ex2 div');
-        const ex3 = document.querySelector('.ex3 div');
+    
+<!-- for.html -->
+<article class="ex1">
+    <h2>1부터 100까지 출력하시오. <button>출력</button></h2>
+    <div>1,2,3,4,5,6....</div>
+</article>
 
-        let even = '';
-        /* let result = []; 
-        for(let a=1;a<101;a++){
-            
-            if(a<100){
-                result +=a+',';
-            }
-            else{
-                result +=a;
-            }
-        }
-        ex1.textContent = result;
-        for(let a=1;a<101;a++){
-           
-            if((a%2)==0){
-                even +=a+','
-            }
-        } 
-        let result = [];
-        for (let a = 1; a < 101; a++) {
+<article class="ex2">
+    <h2>1에서 100까지 수 중에서 짝수를 출력하시오. <button>출력</button></h2>
+    <div>2,4,6,8,10,12,.....</div>
+</article>
 
-            if ((a % 2) == 0) {
-                result.push(a);
-            }
-        }
-        ex2.textContent = result;
+<article class="ex3">
+    <h2>1에서 100까지 수 중에서 끝자리가 3,6,9를 찾아 출력하시오. <button>출력</button></h2>
+    <div>3,6,9,13,16,19,23,26,29.....</div>
+</article>
 
+<script>
+     const elEx1 = document.querySelector('.ex1 div'),
+           elEx2 = document.querySelector('.ex2 div'),
+           elEx3 = document.querySelector('.ex3 div'),
+           elbtn = document.querySelectorAll('button');
+
+    let result = [];
+ 
+    // result[0] = 1;
+    // result.push(1);
+    function numFun(){
         result = [];
-        for (let a = 1; a < 101; a++) {
-            
-                if (((a%10) % 3) == 0) {
-                    result.push(a);
-                }
-            
+        for(let i=1; i<=100; i++){
+            result.push(i);
         }
+        elEx1.textContent = result;
+    }
+
+    //짝수
+    function numEven(){
+        result = [];
+        for(let i=1; i<=100; i++){
+            if(i%2 == 0){
+                result.push(i);
+            }
+        }
+        elEx2.textContent = result;
+    }
+
+    //3,6,9
+    function num369(){
+        result = [];
+        for(let i=1; i<=100; i++){
+            if(   (i%10) %3 == 0   &&   i%10 != 0 ){
+                result.push(i);
+            }
+        }
+        elEx3.textContent = result;
+    }
+
+    // elbtn[0].onclick = numFun;
+    // elbtn[1].onclick = numEven;
+    // elbtn[2].onclick = num369;
+
+    elbtn.forEach(function(btn,key,all){
         
-        ex3.textContent = result;
-        */
-        let result = [];
-        function numFun() {
+        btn.onclick = function(){
+            
+            // if(key == 0){
+            //     numFun();
+            // }else if(key == 1){
+            //     numEven(); 
+            // }else{
+            //     num369(); 
+            // }
 
-
-            for (let a = 1; a < 101; a++) {
-
-                if (a < 100) {
-                    result += a + ',';
-                }
-                else {
-                    result += a;
-                }
+            // key : 0, 1, 2
+            switch(key){
+                case 0: numFun(); break;
+                case 1: numEven(); break;
+                default : num369();
             }
+            
+        };
+    });
+    
+    
+    
 
 
-            ex1.textContent = result;
+</script>
+
+
+<article class="gugu">
+    <h2> 구구단 </h2>
+    <div>
+        2 x 1 = 2
+        2 x 2 = 6
+        2 x 3 = 8
+    </div>
+    <button data-num="2" data-name="aaa"> 2단 출력 </button>
+    <button data-num="3"> 3단 출력 </button>
+    <button data-num="4"> 4단 출력 </button>
+    <button data-num="24"> 24단 출력 </button>
+</article>
+
+<script>
+    const elGugu = document.querySelector('.gugu > div'),
+          elBtnGugu = document.querySelectorAll('.gugu > button');
+
+    let gugu ='';
+
+    function guguFun(n){
+        gugu='';
+        for(let i=1; i<=9; i++){
+            gugu += `${n} x ${i} = ${n*i} <br>`;       
         }
-        result = [];
-        function numEven() {
-            for (let a = 1; a < 101; a++) {
+        elGugu.innerHTML = gugu;
+    }
 
-                if ((a % 2) == 0) {
-                    result.push(a);
-                }
-            }
-            ex2.textContent = result;
-        }
-        console.log(10 % 10)
-        result = [];
-        function num369() {
-            for (let a = 1; a < 101; a++) {
+    elBtnGugu.forEach(function(btn,key){
+        btn.onclick = function(){
+            let num = btn.dataset.num;
+            guguFun(num); 
 
-                if ((a % 10) % 3 == 0 && (a % 10) != 0) {
-                    result.push(a);
-                }
-
-            }
-            ex3.textContent = result;
-        }
-        const btn = document.querySelectorAll('button');
-        btn.forEach(function (elbtn, key, all) {
-
-            elbtn.onclick = function () {
-                /* result=[];
-                if (key == 0) {
-                    
-                    numFun();
-                } 
-                else if (key == 1) {
-                    
-                    numEven();
-                }
-                 else  {
-                    
-                    num369();
-                }   */
-                result = [];
-                switch (key) {
-                    case 0: numFun(); break;
-                    case 1: numEven(); break;
-                    case 2: num369(); break;
-                }
-
-            }
+            // switch(key){
+            //     case 0 : guguFun(2); break;
+            //     case 1 : guguFun(3); break;
+            // }            
+        };
+    })
 
 
-        });
 
 
-    </script>
-    <article class="gugu">
-        <h2>구구단</h2>
-        <div></div>
-        <button data-num="2">2단 출력</button>
-        <button data-num="3">3단 출력</button>
-        <div></div>
-    </article>
-    <script>
-        const gugu = document.querySelector('.gugu > div'),
-            gubtn = document.querySelector('.gugu > button'),
-            allBtn = document.querySelectorAll('.gugu > button');;
-
-        let gu;
-        function guguFun(n) {
-            /* for (let a = 2; a < 10; a++) {
-                let gu = 0
-                for (let i = 1; i < 10; i++) {
-                    gu = a * i;
-                    gugu.innerHTML += a + " X " + i + " : " + gu + '&nbsp&nbsp&nbsp';
-                }
-                gugu.innerHTML += "<br>";
-            } */
-            gu = '';
-            for (let a = 1; a <= 9; a++) {
-
-                gu += `${n} X ${a} = ${n * a} <br>`
-
-            }
-            gugu.innerHTML = gu;
-        }
-        /* allBtn[0].onclick = function () {
-            gugufun(2);
-        }; */
-
-        allBtn.forEach(function (abtn, key, all) {
-
-            abtn.onclick = function () {
-                let num = abtn.dataset.num;
-                guguFun(num);
-                /* if (key == 0) {
-                    gugufun(2);
-                }
-                if (key == 1) {
-                    gugufun(3);
-                } 
-                
-                switch(key){
-                    case 0: guguFun(2);break;
-                    case 1: guguFun(3);break;
-                } */
-            }
-        }
-        );
 
 
-    </script>
 
 
-    <article class="all-gugu">
-        <h2>2~9까지 구구단 출력</h2>
-        <div>
+   
 
-        </div>
 
-    </article>
+</script>
+
+
+<article class="all-gugu">
+    <h2>2~9단까지 구구단 출력</h2>
+    <div>
+        <!-- 
+            <p>2단</p>
+            <p>3단</p>
+            <p>4단</p>
+            <p>5단</p>
+            <p>6단</p> 
+        -->
+    </div>
     <style>
-        .all-gugu div {
+        .all-gugu div{
             display: flex;
             flex-wrap: wrap;
         }
-
-        .all-gugu div p {
-            border: 1px solid #000;
-            margin: 3px;
+        .all-gugu p{
+            order:2px solid #000; 
+            margin:3%; padding:3%;
         }
     </style>
-    <script>
-        const elAllGugu = document.querySelector('.all-gugu div');
-        /* elAllGugu.innerHTML="" */
-        let guguTag = '';
-        for (let a = 2; a < 10; a++) {
-            guguTag += '<p>';
-            for (let i = 1; i < 10; i++) {
-                guguTag += `${a}X${i}=${a * i}<br>`;
-            }
-            guguTag += '</p>';
-        }
-        elAllGugu.innerHTML = guguTag;
-    </script>
-    <article class="self">
-        <h2>자판기</h2>
-        <div>
-            <p class="price">1000원</p>
-            <p class="btn">
-                <input type="text" class="p">
-                <button data-price="300" >밀크커피(300)</button>
-                <button data-price="400">고급밀크커피(400)</button>
-                <button data-price="600">블랙커피(600)</button>
-                <button class="reset">초기화</button>
-                <button class="plus">더하기</button>
-            </p>
+</article>
 
-            <p></p>
-            <p>조건 ) 총금액 1000원
-                -> 원하는 커피 2잔을 선택
-                -> 선택시 총금액에서 커피값을 빼주세요.
-                -> 잔액 부족시 메세지 출력(잔액이 부족합니다.)
-                -> 초기 버튼 클릭시 다시 시작!
-            </p>
-        </div>
-    </article>
+<script>
+    const elAllGugu = document.querySelector('.all-gugu div');
+    let guguTag = '';
+
+    //전체 구구단 2~9
+    for(let i=2; i<=9; i++){
+        //개별 구구단 1~9
+        guguTag += '<p>';
+        for(let j=1; j<=9; j++){
+            guguTag += `${i}x${j}=${i*j} <br>`;
+        }
+        guguTag += '</p>';
+    }
+    elAllGugu.innerHTML = guguTag;
+</script>
+
+
+<article class="self">
+    <h2> 자판기 </h2>
+    <div>
+        <p class="price">1000원</p>
+        <p class="btn">
+            <button data-price="300">밀크커피(300)</button>
+            <button data-price="400">고급밀크커피(400)</button>
+            <button data-price="600">블랙커피(600)</button>
+            <button> 초기화 </button>
+        </p>
+        <p> 조건 ) 총금액 1000원 
+            -> 원하는 커피 2~3잔을 선택
+            -> 선택시 총금액에서 커피값을 빼주세요
+            -> 잔액 부족시 메세지 출력(잔액이 부족합니다.)
+            -> 초기버튼 클릭시 다시 시작!
+        </p>
+    </div>
     <style>
-        .self {
-            width: 500px;
-            margin: 100px auto;
-            border: 1px solid #ddd;
-            padding: 40px;
+        .self{
+            width:500px; margin:100px auto;
+            border:1px solid #aaa; padding:40px;
             text-align: center;
         }
-
-        .price {
-            background-color: #000;
-            padding: 10px 0;
-            color: yellow;
+        .price{
+            background-color: #000; padding:10px 0;
+            color:yellow; font-size:3rem;
         }
-
-        .btn {
-            background-color: #ddd;
-            padding: 20px 0;
-        }
-
-        .btn button:last-child {
-            background-color: red;
-        }
-
-        .self p:last-of-type {
-            white-space: pre-line;
-            text-align: left;
+        .btn{ background-color: #ddd; padding:20px 0;}
+        .btn button:last-child{ background-color: red;}
+        .self p:last-child{
+            white-space: pre-line; text-align: left;
             line-height: 2;
         }
     </style>
-    <script>
-        const cBtn = document.querySelectorAll('.btn button'),
-            priceBox = document.querySelector('.price');
-        let allP = 1000;
-        let total = 0;
-        function btnEvent(n) {
-            total += n;
-            if (allP - total < 0) {
-                alert("잔돈이 부족합니다.");
-                priceBox.innerHTML = ("잔돈이 부족합니다.");
-            }
-            else {
-                priceBox.innerHTML = allP - total;
-            }
+</article>
+
+<script>
+/* 
+    버튼은 -> 반복문을 활용해서 클릭이벤트 발생
+        ->  초기화버튼일때(총금액 1000으로 설정)
+
+    (함수활용)
+    총금액은 -> 커피버튼을 누를때마다 연산해서 화면에 출력
+            -> 커피값( dataset.price )
+            -> 금액 부족시 메세지 출력(if문 활용)
+            -> 메세지 = alert('금액이 부족합니다.');
+*/
+    const elCoffee = document.querySelectorAll('.btn button');
+    const elPrice =  document.querySelector('.price');
+    let allPrice = 1000;
+
+    function coffee(key, money){
+        // 일처리
+        if(allPrice < money) {
+            alert('금액 부족!!!!-.-');
+            return;
         }
-        cBtn.forEach(function (btn, key) {
-            let pr = parseInt(btn.dataset.price);
-            btn.onclick = function () {
-                btnEvent(pr);
-                if (key == 3) {
-                    total = 0;
-                    priceBox.innerHTML = allP;
-                }
-            }
-        });
         
+        if(key == 3){
+            allPrice = 1000;
+        }else{
+            allPrice = allPrice - money;
+        }
 
-    </script>
+        elPrice.textContent = allPrice;        
+    }
+
+    elCoffee.forEach(function(el,key){
+        el.onclick = function(){
+            coffee(key, Number(el.dataset.price));  
+        }
+    })
+
+
+</script>
+
+
+
+
+
 </body>
-
 </html>

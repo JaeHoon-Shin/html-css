@@ -1,6 +1,6 @@
-@charset "UTF-8";
 main {
-  background-color: gainsboro;
+  background-color: #ddd;
+  font-family: "dotum";
 }
 
 article {
@@ -8,20 +8,53 @@ article {
   margin: 0 auto;
   text-align: center;
 }
+article h2 {
+  max-width: 1400px;
+}
 article ul {
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 article ul li {
-  /* display: flex;
-  align-items: center; */
   display: flex;
   align-items: center;
   width: 30%;
-  font-size: 40px;
-  /* & = 상위 부모  */
 }
 article ul li::after {
   content: "";
   flex-grow: 1;
-  border: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.bg {
+  margin: 100px auto;
+  width: 1400px;
+}
+.bg > div {
+  display: flex;
+}
+.bg > div p {
+  width: 300px;
+  height: 200px;
+}
+.bg > div p:nth-of-type(1) {
+  background: url("../img/01.jpg") 0 0/cover no-repeat;
+}
+.bg > div p:nth-of-type(2) {
+  background: url("../img/02.jpg") 0 0/cover no-repeat;
+}
+.bg > div p:nth-of-type(3) {
+  background: url("../img/03.jpg") 0 0/cover no-repeat;
+}
+
+@media (min-width: 360px) and (max-width: 768px) {
+  body {
+    background-color: red;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: blue;
+  }
 }/*# sourceMappingURL=index.css.map */

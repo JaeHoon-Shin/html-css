@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*Math.ceil();  한자리 무조건 올림 ex) 7.1 -> 8 , 7.7 -> 8 */
+        /*Math.round(); 반올림 */
+        /*Math.floor(); 소수점 버림 */
+        function ranFun(n) {
+            return Math.floor(Math.random() * n)
+        }
+        let data = [{ src: './img/01.jpg' }, { src: './img/02.jpg' },
+        { src: './img/03.jpg' }, { src: './img/04.jpg' },
+        { src: './img/05.jpg' }, { src: './img/06.jpg' },
+        { src: './img/07.jpg' }, { src: './img/08.jpg' },
+        { src: './img/09.jpg' }, { src: './img/10.jpg' }];
+
+        let elImg = document.createElement('img');
+
+        elImg.src = data[ranFun(data.length)].src;
+        /*
+            appand() 요소 뒤쪽에 추가
+            document.body.append(elImg); 
+            prepend() 요소 앞쪽에 추가 
+        */
+
+        /* ranFun(data.length) */
+
+
+        /* document.body.prepend(elImg);
+
+        const elPhoto = document.querySelector('img');
+
+        let inter;
+
+        elPhoto.onmousedown = function(){
+             clearTimeout(inter); 
+            inter = setTimeout(function(){
+                elPhoto.src=data[ranFun(data.length)].src;
+            },1000);
+            
+        } */
+
+        /* console.log(ranFun(45) + 1); */
+    </script>
+    <div>
+        <button>로또 번호 받기!</button>
+        <p></p>
+    </div>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+        }
+
+        div>button {
+            text-align: center;
+            width: 300px;
+            height: 30px;
+            background-color: red;
+            color: aliceblue;
+        }
+
+        div>p {
+            text-align: center;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+        let loto = [];
+        function lotoFun() {
+            for (let i = 0; i < 6; i++) {
+                let ran = ranFun(45) + 1
+                loto[i] = ran;
+                for (let b = 0; b < i; b++) {
+                    if (loto[b] == ran) {
+                        loto.pop();
+                        i--;
+                    }
+                }
+            }
+            return loto;
+        }
+        document.querySelector('button').onclick = function () {
+            let pp = lotoFun();
+            pp.sort(function (a, b) { return a - b; });
+            document.querySelector('p').textContent = pp;
+            console.log(pp.sort());
+        }
+
+        let arr = ["2", "2", "2" ,"1", "1"];
+        function a() {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = i + 1; j < arr.length; ) {
+                    if (arr[i] == arr[j]) {
+                        j++
+                    }
+                    else if(arr[i] != arr[j]) {
+                        return 0;
+                        break;
+                    }
+                }
+                return 1;
+            }
+            
+        }
+        console.log(a());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*let str1 = "javascript";
+        let arr = [10,20,30,40,50,60,70,80,90];
+        console.log(
+            str1.split('s'),
+            str1.slice(4,5),
+            str1.match('z'),  null , array
+            
+            arr.splice(4,4,100)
+            
+            )
+         console.log( 
+            str1[0], 
+            str1.charAt(0),
+            str1.substr(4,2),
+            str1.indexOf('s'),
+            str1.lastIndexOf('a'),
+            str1.toUpperCase()
+            );*/
+
+
+    </script>
+
+    <div class="str">
+        <img src="./img/01.jpg">
+    </div>
+    <script>
+        const elStr = document.querySelector('.str img');
+
+        let imgUrl = elStr.getAttribute('src');
+        let sIdx = imgUrl.lastIndexOf('/');
+        let eIdx = imgUrl.lastIndexOf('.');
+        let reUrl = imgUrl.replace(imgUrl.slice(sIdx+1,eIdx),'03');
+        
+
+/*         console.log(
+            reUrl
+        ) */
+        elStr.src = reUrl;
+        //elStr.src = reUrl;
+        /* elStr.setAttribute('src',reUrl);
+        console.log(
+            elStr.src,
+            elStr.getAttribute('src'),
+            
+        ); */
+
+        /* 수정
+            elStr.src='';
+            elStr.setAttribute('src','img/02.jpg')
+        */
+
+        // 브라우저 URL 값
+        /* location.hash(해시문자);
+        location.href(전체주소);
+        location.hostname(도메인 제외한 문자); */
+        // 변경
+        //location.href = 'naver.com'
+
+        let url = location.href;
+
+        /* let a = ['n','a','v','e','v'];
+        function lastIndexOfT(n){
+            let s ;
+            for(let i = 0; i< a.length; i++){
+                if(a[i]==n){
+                    s = i;
+                }
+            }
+            return s;
+        }
+        
+        console.log(lastIndexOfT('v'))   */
+        console.log(url.slice(url.lastIndexOf('/')+1))
+
+
+
+    </script>
+</body>
+</html>

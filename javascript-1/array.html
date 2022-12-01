@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- array.html -->
+    <div class="result">
+        10+20+30 = 
+    </div>
+
+    <div class="self">
+        <p>html(60), css(90), js(20)</p>
+        <p>총점 = </p>
+        <p>평균 = </p>
+        <p>판정 = </p>  <!-- 60점 이상일경우 '합격' -->
+    </div>
+
+    <script>
+        // let arry = new Array();
+        // let arry = [];
+        let arry = [10,20,30];
+        let sum = 0;
+        let num20;
+
+        console.log(  arry  )
+        0 < 3
+
+        //반복문
+        for(let i=0; i < arry.length; i++){
+            sum += arry[i];
+
+            if(arry[i] === 20){
+                num20 = arry[i]
+            }
+        }
+
+       
+        
+        const elResult = document.querySelector('.result');
+        elResult.textContent += sum;
+        elResult.textContent += `,${num20}`;
+
+    //self
+    const el_1 = document.querySelector('.self > p:nth-child(2)');
+    const el_2 = document.querySelector('.self > p:nth-child(3)');
+    const el_3 = document.querySelector('.self > p:nth-child(4)');
+    
+    let sClass = [60,90,20];
+    let total=0, avg, grend;
+    // 총점 (반복문활용)
+    for(let i=0; i< sClass.length; i++){
+        total += sClass[i];
+    }
+    avg = total/3;
+    avg = avg.toFixed(1);
+    avg = Math.round(avg);
+    // grend = (avg > 60) ? '합격' : '불합격';
+
+    if(avg > 60) {
+     grend = '합격';
+    }else{
+     grend = '불합격';
+    }
+
+    el_1.textContent += total;
+    el_2.textContent += avg;
+    el_3.textContent += grend;
+    
+
+    </script>
+
+
+
+
+
+</body>
+</html>

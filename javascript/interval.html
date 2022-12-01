@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- interval.html -->
+    <!-- 비동기(비순차처리) / 동기(순차처리) -->
+    <script>
+        let num = 0;
+        let inter = setInterval(function(){
+                if(num < 100) {
+                    num++;
+                }else{
+                    clearInterval(inter);
+                }
+            },100);
+
+        let timeOut = setTimeout(function(){
+                        console.log('2초 알람');
+                      },2000);
+
+                      clearTimeout(timeOut);
+    </script>
+
+
+    <div class="ex-progress">
+        <p>0%</p>
+    </div>
+    
+    <style>
+        .ex-progress{
+            width:200px; height:200px;
+            margin:100px auto;
+            border-radius: 50%;
+            background:conic-gradient(red 0%,rgb(206, 206, 206) 0%);
+            padding:20px;
+            box-sizing: border-box;
+            transition:.3s;
+        }
+        .ex-progress > p{
+            background-color: #fff;
+            width:100%; height:100%;
+            font-size:3rem;
+            border-radius: 50%;
+            display: flex; justify-content: center;
+            align-items: center;
+            margin:0;
+        }
+    </style>
+    
+    <script>
+        const elProgress = document.querySelector('.ex-progress'),
+              elTxt = document.querySelector('.ex-progress > p');
+
+        function progressFun(n){
+            let numPer = 10;
+            let progress = setInterval(function(){ 
+                    if(numPer < n){ 
+                        numPer++; 
+                    }else{
+                        clearInterval(progress);
+                    }
+                    elProgress.style = `background:conic-gradient(red ${numPer}%,rgb(206, 206, 206) 0%);`;
+                    elTxt.textContent = `${numPer}%`;
+                },1);           
+        }
+        progressFun(80);
+    </script>
+
+
+    <div class="photo">
+        
+
+        <!-- <img src="./img/01.jpg">
+        <img src="./img/01.jpg">
+        <img src="./img/01.jpg"> -->
+    </div>
+    <style>.photo img{width:20%;}</style>
+
+    <script>
+        const elPhoto = document.querySelector('.photo');
+
+        let data = [
+                    {
+                            name:'test01',
+                            url : './img/01.jpg',
+                    },
+                    {
+                            name:'test02',
+                            url : './img/02.jpg',
+                    },
+                    {
+                            name:'test03',
+                            url : './img/03.jpg',
+                    }
+                ]
+        //data.url  //'./img/01.jpg'
+        data.forEach(function(obj,key){
+            setTimeout(function(){
+                elPhoto.innerHTML += `<img src="${obj.url}">`;
+            },500*key)
+        })
+
+    </script>
+
+
+
+
+</body>
+</html>
