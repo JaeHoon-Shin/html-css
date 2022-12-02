@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <article>
+    <!--     <article>
 
         <h2>block , none</h2>
 
@@ -17,23 +17,123 @@
         <div id="ex_con" style="padding:60px;border:2px solid #000">
             contents
         </div>
-    </article>
+    </article> -->
+    <!--    <style>
+        /* #ex_con{
+
+        } */
+        .on {
+            padding: 60px;
+            border: 2px solid #000;
+            display: none;
+        }
+    </style>
     <script>
-        let toggle = 0;
+
+
         /* const elEx = document.getElementById('ex_btn'); */
         ex_btn.onclick = function () {
-            console.log(toggle)
-            if (toggle == 0) {
-                ex_con.style = 'padding:60px; border:2px solid #000; display:none';
+            /* ex_btn.classList.toggle('on')
+            let toggle = ex_btn.classList.contains('on'); */
+            ex_con.classList.toggle('on');
+            let toggle = ex_con.classList.contains('on');
+            toggle == true ? ex_btn.textContent = '보기' : ex_btn.textContent = '닫기';
+            /* if (toggle == 0) {
+                ex_con.style.display='none';
                 toggle = 1;
-                console.log(toggle)
+
             }
             else if(toggle == 1 )
             {
-                ex_con.style = 'padding:60px; border:2px solid #000; display:block';
+                ex_con.style.display='block';
                 toggle = 0;
-            }
+            } */
         }
+
+    </script> -->
+
+    <article class="tab">
+        <div>
+            <button>tab01</button>
+            <button>tab02</button>
+            <button>tab03</button>
+        </div>
+        <div class="content">
+            <div>content 01</div>
+            <div>content 02</div>
+            <div>content 03</div>
+        </div>
+    </article>
+    <style>
+        .tab {
+            margin: 200px 0;
+            width: 500px;
+        }
+
+        .tab div button.on {
+            background-color: #000;
+            color: aliceblue;
+        }
+
+        .tab .content {
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #000;
+        }
+
+        .tab .content div {
+            font-size: 3rem;
+            display: none;
+        }
+
+        .tab .content div.on {
+            display: block;
+        }
+    </style>
+    <script>
+
+        const elBtn = document.querySelectorAll('.tab button'),
+            elContent = document.querySelectorAll('.content div');
+
+        /* elBtn.classList.add('on'); */
+        let idx = 0;
+        function addBtn(n) {
+            elBtn[n].classList.add('on');
+            elContent[n].classList.add('on');
+        }
+        function reBtn(n) {         
+            elBtn[n].classList.remove('on');
+            elContent[n].classList.remove('on');
+        }
+        elBtn.forEach(function (btn, key, all) {
+
+            btn.onclick = function () {
+                /*for (let i = 0; i < elBtn.length; i++) {
+                    elBtn[i].classList.remove('on');
+                    elContent[i].classList.remove('on');   
+                } */
+                if (btn.classList.contains('on') == true) {
+                    reBtn(key);
+                }
+                else {
+                    reBtn(idx);
+                    idx = key;
+                    addBtn(key);
+                }
+
+
+
+                /* btn.classList.toggle('on');
+                elContent[key].classList.toggle('on'); */
+
+            }
+        })
+
+
+
+
 
     </script>
 </body>
