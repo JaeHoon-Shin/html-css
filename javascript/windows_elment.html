@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img src="./img/01.jpg">
+    </div>
+
+    <script>
+        /* window.onload = function(){ */
+        const elImg = document.querySelector('img');
+
+        /* console.log(
+            elImg.offsetWidth , 
+            elImg.offsetHeight,
+            elImg.offsetLeft,
+            elImg.offsetTop); */
+
+        console.log(window.innerHeight,
+            window.innerWidth,
+            window.screen.height
+            , window.screen.width)
+    /* } */
+    </script>
+
+
+    <div class="offset">
+        <img src="./img/01.jpg">
+        <img src="./img/02.jpg">
+        <img src="./img/03.jpg">
+        <p></p>
+    </div>
+    <style>
+        .offset {
+            position: relative;
+        }
+
+        .offset img {
+            width: 300px;
+        }
+
+        .offset p {
+            border: 5px solid red;
+            box-sizing: border-box;
+            position: absolute;
+            transition: 0.5s;
+            margin: 0;
+            width: 0;
+            height: 0;
+            x: 0;
+            y: 0
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', function () {
+            const elOffset = document.querySelectorAll('.offset img'),
+                elLine = document.querySelector('.offset p');
+            let pos = { w: 0, h: 0, x: 0, y: 0 };
+
+
+            elOffset.forEach(function (el) {
+                el.onclick = function () {
+                    pos.w = el.offsetWidth;
+                    pos.h = el.offsetHeight;
+                    pos.x = el.offsetLeft;
+                    pos.y = el.offsetTop;
+                    elLine.style = `width:${pos.w}px; height : ${pos.h}px; left : ${pos.x}px; top : ${pos.y}px;`
+                };
+            });
+        });
+    </script>
+
+    <article class="ex">
+        <h2>이미지 슬라이드</h2>
+        <div class="ex-g">
+            <figure>
+                <img src="./img/05.jpg">
+                <img src="./img/07.jpg">
+                <img src="./img/09.jpg">
+            </figure>
+        </div>
+    </article>
+
+    <style>
+        .ex {
+            margin: 200px auto;
+            width: 400px;
+
+
+        }
+
+        .ex-g {
+            border: 5px solid red;
+            box-sizing: border-box;
+        }
+
+        .ex-g figure {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            transition: 0.5s;
+            position: relative;
+        }
+
+        .ex-g figure img {
+            width: 100%;
+            flex-shrink: 0;
+
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            const elFigure = document.querySelector('.ex figure'),
+                elImg1 = document.querySelectorAll('.ex img');
+
+            let num = elImg1[0].offsetWidth;
+
+            elImg1.forEach(function (el, key) {
+                el.onclick = function () {
+                    let x = el.offsetLeft;
+
+
+                    /* num*key */
+                    elFigure.style = `transform : translateX(-${x}px)`
+
+                };
+            });
+        });
+
+    </script>
+
+    <article class="ex2">
+        <h2>이미지 슬라이드</h2>
+        <div class="ex-g">
+            <figure>
+                <img src="./img/05.jpg">
+                <img src="./img/07.jpg">
+                <img src="./img/09.jpg">
+            </figure>
+        </div>
+        <button>prev</button>
+        <button>next</button>
+    </article>
+    <style>
+        .ex2{ 
+            width:  400px;
+            margin: 200px auto;
+        }
+        .ex2 figure{
+            position: relative;
+        }
+        button{
+            margin-top: 100px;
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            color: wheat;
+        }
+    </style>
+    <script>
+        const ex2Figure = document.querySelector('.ex2 figure'),
+              ex2Img = document.querySelectorAll('.ex2 figure img'),
+              btn = document.querySelectorAll('.ex2 button');
+              let idx = 0;
+              let p =0;
+              
+        btn.forEach(function(el,key){
+            el.onclick = function(){
+                if(key == 0){
+                    if(idx > 0){
+                    --idx;
+                    /*p = ex2Img[idx].offsetLeft;
+                    ex2Figure.style = `transform : translateX(-${p}px)`   */
+                    ex2Figure.style = `transform : translateX(-${100*idx}%)` 
+                    }
+                }
+                else{
+                    if(idx <ex2Img.length-1){
+                    ++idx;
+                    /* p =ex2Img[idx].offsetLeft;
+                    ex2Figure.style = `transform : translateX(-${p}px)` */
+                    ex2Figure.style = `transform : translateX(-${100*idx}%)` 
+                    }
+                }
+            }
+        })
+     
+    </script>
+</body>
+
+</html>

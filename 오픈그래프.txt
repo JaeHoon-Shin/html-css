@@ -1,0 +1,4 @@
+  <meta property="og:url"       content="사이트 URL">
+    <meta property="og:title"     content="사이트명">
+    <meta property="og:image"  content="공유할배너이미지 주소">
+    <meta property="og:description" content="사이트 소개 내용">

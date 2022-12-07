@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article class="gallery">
+        <h2>Gallery</h2>
+       <div>
+             <!-- <figure>
+                <img src="./img/01.jpg">
+                <figcaption>
+                    이미지명
+                </figcaption>
+            </figure>-->
+        </div> 
+    </article>
+    <style>
+        .gallery {
+            width: 70%;
+            margin: 100px auto;
+        }
+
+        .gallery div {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .gallery figure {
+            margin: 5% 0;
+            width: 30%;
+        }
+
+        .gallery figure img {
+            width: 100%;
+        }
+    </style>
+</body>
+
+<script>
+    let data = [
+        {url:'./img/01.jpg',title:'이미지1',datail:'굿'},{url:'./img/02.jpg',title:'이미지2',datail:'굿'},
+        {url:'./img/03.jpg',title:'이미지3',datail:'굿'},{url:'./img/04.jpg',title:'이미지4',datail:'굿'}
+        ,{url:'./img/05.jpg',title:'이미지5',datail:'굿'},{url:'./img/06.jpg',title:'이미지6',datail:'굿'},
+        {url:'./img/07.jpg',title:'이미지7',datail:'굿'},{url:'./img/08.jpg',title:'이미지8',datail:'굿'},
+        {url:'./img/09.jpg',title:'이미지9',datail:'굿'},{url:'./img/10.jpg',title:'이미지10',datail:'굿'}
+    ]
+
+
+    const elGallery = document.querySelector('.gallery div')
+    for(let i =0;i<data.length; i++){
+    elGallery.innerHTML+=`<figure>
+                <img src=${data[i].url}>
+                <figcaption>
+                    ${data[i].title}
+                </figcaption>
+            </figure>`
+        }
+        const test = document.querySelectorAll('.gallery div figure');
+        test.forEach(function(el,key){
+            el.onclick =function(){
+                alert(`하이 ${key}`)
+            }
+        })
+</script>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article class="faq">
+        <h2>FAQ</h2>
+        <ul>
+            <li>
+                Q.질문1
+                <div> A.답변1 </div>
+            </li>
+            <li>
+                Q.질문2
+                <div> A.답변2 </div>
+            </li>
+            <li>
+                Q.질문3
+                <div> A.답변3 </div>
+            </li>
+            <li>
+                Q.질문4
+                <div> A.답변4 </div>
+            </li>
+            <li>
+                Q.질문5
+                <div> A.답변5 </div>
+            </li>
+        </ul>
+    </article>
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .faq {
+            width: 500px;
+            margin: 100px auto;
+        }
+
+        .faq li {
+            border-top: 1px solid black;
+            padding: 20px;
+        }
+
+        .faq li div {
+            background-color: #ddd;
+            padding: 20px;
+            display: none;
+        }
+
+        .faq li.on div {
+            display: block;
+        }
+    </style>
+    <script>
+        const elFaq = document.querySelectorAll('.faq ul li');
+        let idx = 0;
+        elFaq.forEach(function (faq, key) {
+            faq.onclick = function () {
+                 /*if (faq.classList.contains('on')) {
+                    faq.classList.toggle('on');
+                }
+                else {
+                    elFaq[idx].classList.remove('on');
+                    faq.classList.toggle('on');
+                    idx = key;
+                } 
+                */
+               if(faq.classList.contains('on')==false){
+                    elFaq[idx].classList.remove('on');
+               }
+               faq.classList.toggle('on');
+               idx=key;
+            };
+        });
+    </script>
+</body>
+
+</html>
