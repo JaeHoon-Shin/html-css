@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./index.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script defer src="./index.js"></script>    
 </head>
 
 <body>
@@ -14,17 +15,11 @@
     <article class="mainView">
         <h2>mainView</h2>
         <div>
-            <img src="../img/01.jpg">
-            <p>굿</p>
+            <!-- <img src="../img/01.jpg">
+            <p>굿</p> -->
         </div>
     </article>
     <article class="thumb">
-        <figure>
-            <img src="../img/02.jpg">
-            <figcaption>
-
-            </figcaption>
-        </figure>
     </article>
 </div>
 <style>
@@ -34,6 +29,7 @@
     }
     img{
         width: 100%;
+        transition: 0.5s;
     }
     .view{
         display: flex;
@@ -47,19 +43,27 @@
         display: flex;
     flex-direction: column;
     align-items: center;
+    
     }
     .mainView div.on{
         display: none;
     }
+    .mainView div{
+        width: 300px;
+        height: 300px;
+    }
+    .mainView div img{
+        transition: 0.5s;
+    }
     .thumb{
+        transition: 0.5s;
         margin-top: 50px;
         display: flex;
         flex-wrap: nowrap;
     }
     .thumb figure{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
+        width: 50px;
+        transition: 0.5s;
     }
 </style>
 </body>

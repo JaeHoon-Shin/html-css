@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding = "utf-8"?>
+<items>
+    <item>
+        <title>이미지 01</title>
+        <url>../img/01.jpg</url>
+        <detail>어쩌구 카카카ㅏ카카1</detail>
+    </item>
+    <item>
+        <title>이미지 02</title>
+        <url>../img/02.jpg</url>
+        <detail>어쩌구 카카카ㅏ카카2</detail>
+    </item>
+    <item>
+        <title>이미지 03</title>
+        <url>../img/03.jpg</url>
+        <detail>어쩌구 카카카ㅏ카카3</detail>
+    </item>
+    <item>
+        <title>이미지 04</title>
+        <url>../img/04.jpg</url>
+        <detail>어쩌구 카카카ㅏ카카4</detail>
+    </item>
+    <item>
+        <title>이미지 05</title>
+        <url>../img/05.jpg</url>
+        <detail>어쩌구 카카카ㅏ카카5</detail>
+    </item>
+
+</items>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <article class="faq">
+        <h2>FAQ</h2>
+        <ul>
+            <li>
+                Q.질문 1
+                <div>A.답변 1</div>
+            </li>
+            <li>
+                Q.질문 2
+                <div>A.답변 2</div>
+            </li>
+            <li>
+                Q.질문 3
+                <div>A.답변 3</div>
+            </li>
+
+        </ul>
+    </article>
+    <script>
+        $('.faq li div').hide();
+        $('.faq li').click(function () {
+            $(this).find('div').slideToggle();
+        })
+
+    </script>
+    <article class="fade">
+        <h2>Fade 슬라이드</h2>
+        <div>
+            <img src="../img/01.jpg">
+            <img src="../img/02.jpg">
+            <img src="../img/03.jpg">
+        </div>
+    </article>
+    <style>
+        .fade div {
+            position: relative;
+            width: 400px;
+        }
+
+        .fade img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+
+        }
+    </style>
+    <script>
+        $('.fade img').not(":first").hide();
+
+        let num = 0,fadeInterval;
+        /* $('.fade img').eq(0).fadeOut(1000)
+        $('.fade img').eq(-2).fadeIn(1000) */
+        fadeInterval = setInterval(function () {
+            $('.fade img').eq(num).fadeOut(1000);
+            num++;
+            if(num>2){
+                num = 0;
+            }
+            $('.fade img').eq(num).fadeIn(1000);
+        } ,2000);
+
+
+    </script>
+
+    <article class="effect">
+        <h2>Effect</h2>
+        <div>
+            blind, bounce, clip, drop, explode, faed, fold,
+            highlight, puff, pulsate, scale, shake, size
+            slide, transfer
+        </div>
+        <button id="button" ></button>
+    </article>
+
+    <style>
+        .effect{
+            margin: 400px 0;
+            overflow: hidden;
+        }
+        .effect div{
+            border: 1px solid #000;
+            padding : 40px;
+            width: 400px;
+
+        }
+        .ui-effects-transfer { border: 2px solid gray;
+        background-color: red; }
+        button{
+            margin: 100px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        /* $('.effect div').effect('transfer',{ to: "#button", className: "ui-effects-transfer" },500); */
+
+        $('.effect div')
+        .animate({
+            marginLeft : "200px"
+        },1000,'easeOutBounce')
+        /* .animate({
+            marginLeft : "0px"
+        },1000,'easeOutBounce') */
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
