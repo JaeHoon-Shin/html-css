@@ -7,65 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script defer src="./index.js"></script>    
+    <script defer src="./index.js"></script>
 </head>
 
 <body>
     <div class="view">
-    <article class="mainView">
-        <h2>mainView</h2>
-        <div>
-            <!-- <img src="../img/01.jpg">
+        <article class="mainView">
+            <h2>mainView</h2>
+            <div><!--
+                 <img src="../img/01.jpg">
             <p>굿</p> -->
-        </div>
-    </article>
-    <article class="thumb">
-    </article>
-</div>
-<style>
-    figure{
-        margin: 0;
-       
-    }
-    img{
-        width: 100%;
-        transition: 0.5s;
-    }
-    .view{
-        display: flex;
-        flex-direction: column;
-        margin: 50px auto;
-        align-items: center;
-        text-align: center;
-    }
-    .mainView{
-        
-        display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    }
-    .mainView div.on{
-        display: none;
-    }
-    .mainView div{
-        width: 300px;
-        height: 300px;
-    }
-    .mainView div img{
-        transition: 0.5s;
-    }
-    .thumb{
-        transition: 0.5s;
-        margin-top: 50px;
-        display: flex;
-        flex-wrap: nowrap;
-    }
-    .thumb figure{
-        width: 50px;
-        transition: 0.5s;
-    }
-</style>
+            </div>
+        </article>
+        <p></p>
+        <article class="thumb">
+        </article>
+    </div>
+    <style>
+        figure {
+            margin: 0;
+        }
+        img {
+            width: 100%;
+            transition: 0.5s;
+        }
+
+        .view {
+            display: flex;
+            flex-direction: column;
+            margin: 50px auto;
+            align-items: center;
+            text-align: center;
+        }
+
+        .mainView {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .mainView div {
+            width: 300px;
+            height: 300px;
+        }
+
+        .mainView div img {
+            transition: 0.5s;
+        }
+
+        .thumb {
+            transition: 0.5s;
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .thumb figure {
+            width: 50px;
+            transition: 0.5s;
+        }
+    </style>
 </body>
 
 </html>
