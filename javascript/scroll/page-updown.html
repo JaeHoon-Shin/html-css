@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section>content 01</section>
+        <section>content 02</section>
+        <section>content 03</section>
+        <section>content 04</section>
+        <section>content 05</section>
+    </main>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* button, thumb, track, corner */
+        body {
+            margin: 0;
+
+        }
+
+        main {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            transition: 1s;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10rem;
+        }
+
+        section:nth-child(even) {
+            background-color: aliceblue;
+        }
+    </style>
+
+    <script>
+        const elMain = document.querySelector('main'),
+            elSection = document.querySelectorAll('section');
+        document.body.style = `height:${elMain.offsetHeight}px`
+        let idx = 0;
+        let play;
+        let offset = [];
+        let pos = { y: 0, y2: 0, state: true };
+
+        window.addEventListener('scroll', function () {
+            pos.y = window.pageYOffset;
+            pos.state = (pos.y > pos.y2) ? true : false;
+            console.log(pos)
+            pos.y2 = pos.y;
+            clearTimeout(play)
+            play = setTimeout(function () {
+                if (pos.state) {
+                    if(idx<4)
+                    idx++;
+                } else {
+                    if(idx>0)
+                    idx--;
+                }
+                elMain.style = `transform:translateY(-${offset[idx]}px)`
+            }, 100)
+        });
+        elSection.forEach(function (el, key) {
+            offset.push(el.offsetTop);
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="height: 5000px;">
+    <style>
+        p {
+
+            font-size: 10rem;
+            text-align: center;
+            padding: 300px 0;
+            margin: 0;
+
+        }
+
+        p:nth-child(even) {
+            background-color: aliceblue;
+        }
+    </style>
+    <article>
+        <button>0</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </article>
+    <div>
+        <p>0</p>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+
+
+    </div>
+    <script>
+        let idx = 0;
+        let pos = { y: 0, y2: 0, state: true }
+        let play;
+        let tagValue = 'black';
+        const elPtag = document.querySelectorAll('p');
+        window.addEventListener('scroll', function () {
+            //스크롤 업, 다운
+            pos.y = window.pageYOffset;
+            pos.state = (pos.y > pos.y2) ? true : false;
+            pos.y2 = pos.y;
+            clearTimeout(play)
+            play = setTimeout(function () {
+                if (pos.state) {
+                    idx++;
+                    tagValue = 'red';
+                }
+                else {
+                    idx--;
+                    tagValue = 'black';
+                }
+                // elPtag[idx].style.color = tagValue;
+                //컨텐츠가 하단에 위치하면 명령 전달
+                let offset = elPtag[idx].offsetTop - window.innerHeight;
+                if (offset < window.pageYOffset) {
+                    console.log('콘텐츠' + idx)
+                }
+            }, 50);
+
+
+        });
+    </script>
+    <script>
+        let btn = document.querySelectorAll('button');
+        btn.forEach(function (el, key) {
+            el.addEventListener('click', function () {
+                window.scrollTo({
+                    // 스크롤 이동
+
+                    left: 0,
+                    top: elPtag[key].offsetTop,
+                    behavior: 'smooth'
+
+                });
+            })
+        }) 
+        
+        // el.offsetTop 콘텐츠 위치값
+        // document.body.scrollHeight 문서전체 높이값
+        // window.pageYOffset 스크롤값
+        // scrollTo(); 스크롤 위치 이동
+    </script>
+</body>
+
+</html>

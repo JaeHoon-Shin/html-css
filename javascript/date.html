@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let date = new Date();
+
+        console.log(date.getDate());
+        console.log(date.getFullYear());
+        console.log(date.getMonth()+1);
+        console.log(date.getDate());
+        console.log(['일','월','화','수','목','금','토'][date.getDay()]);
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+
+
+    </script> -->
+
+    <div class="date-1">
+        수업종료 D-day : <span></span>
+    </div>
+    
+    <div class="date-2">
+        수업참여일수 : <span></span>
+        <button> 참여가능 여부 </button>
+    </div>
+
+    <script>
+
+        let today = new Date(),
+            endDay = new Date('2023-04-20'),
+            startDay = new Date('2022-11-02'),
+            oneDay = 24*60*60*1000,
+            dDay = Math.round((endDay-today)/oneDay),
+            pDay = Math.round((today-startDay)/oneDay);
+            
+            const btn = document.querySelector('button'),
+                  elSpan = document.querySelectorAll('span');
+
+            elSpan[0].textContent = dDay;
+            elSpan[1].textContent = pDay;
+            /* console.log() */
+            btn.addEventListener('click',function(){
+                
+                //참여가능 여부
+                if(startDay<today && endDay>today){
+                    alert('공부')
+                }else{
+                    alert('수고')
+                }
+            })
+
+            
+
+    </script>
+</body>
+</html>
