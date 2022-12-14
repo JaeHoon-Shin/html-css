@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+
+<body>
+    <div class="post-slider">
+        <h1 class="sider-title">Treding Posts</h1>
+        <div class="post-wrapper" style="width: 300px; height: 300px;">
+            <div><img src="../img/01.jpg"></div>
+            <div><img src="../img/02.jpg"></div>
+            <div><img src="../img/03.jpg"></div>
+            <div><img src="../img/04.jpg"></div>
+            <div><img src="../img/05.jpg"></div>
+        </div>
+    </div>
+    <div><img src="../img/03.jpg"></div>
+    <style>
+        .post-slider {
+            border: 1px solid red;
+        }
+
+        .post-slider .post-wrapper {
+            width: 50%;
+            height: 350px;
+            margin: 0px auto;
+            border: 1px dashed red;
+        }
+        .post-slider .post-wrapper div img{
+            width: 100%;
+        }
+        .post-slider .post-wrapper .post {
+            width: 300px;
+            height: 350px;
+            display: inline-block;
+            background: gray;
+        }
+    </style>
+    <script>
+        $('.post-wrapper').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+
+
+    </script>
+
+</body>
+
+</html>

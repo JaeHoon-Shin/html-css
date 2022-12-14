@@ -17,9 +17,9 @@
         <section>content 05</section>
     </main>
     <style>
-        ::-webkit-scrollbar {
+        /*  ::-webkit-scrollbar {
             display: none;
-        }
+        } */
 
         /* button, thumb, track, corner */
         body {
@@ -50,35 +50,55 @@
     </style>
 
     <script>
+        history.scrollRestoration = "manual";
         const elMain = document.querySelector('main'),
             elSection = document.querySelectorAll('section');
         document.body.style = `height:${elMain.offsetHeight}px`
         let idx = 0;
         let play;
         let offset = [];
-        let pos = { y: 0, y2: 0, state: true };
+        elSection.forEach(function (el, key) {
+            offset.push(el.offsetTop);
+        });
+        let pos = { y: 0, y2: 0, state: true};
 
         window.addEventListener('scroll', function () {
             pos.y = window.pageYOffset;
             pos.state = (pos.y > pos.y2) ? true : false;
-            console.log(pos)
+            clearTimeout(play);
             pos.y2 = pos.y;
-            clearTimeout(play)
-            play = setTimeout(function () {
-                if (pos.state) {
-                    if(idx<4)
-                    idx++;
-                } else {
-                    if(idx>0)
-                    idx--;
-                }
-                elMain.style = `transform:translateY(-${offset[idx]}px)`
-            }, 100)
+                play = setTimeout(function () {
+                    if (pos.state) {
+                        if (idx < 4) {
+                            idx++;
+                        }
+                   } else {
+                        if (idx > 0)
+                          idx--;  
+                    } 
+                    elMain.style = `transform:translateY(-${offset[idx]}px)`;
+                    /* window.scrollTo({ left: 0, top: offset[idx] }); */
+                    
+                }, 100);
+        console.log(idx)
+ 
         });
-        elSection.forEach(function (el, key) {
-            offset.push(el.offsetTop);
-        });
-
+     /*    if (offset[0] <= window.pageYOffset && window.pageYOffset <= offset[1]) {
+            idx = 0;
+        }
+        else if (offset[1] < window.pageYOffset && window.pageYOffset <= offset[2]) {
+            idx = 1;
+        }
+        else if (offset[2] < window.pageYOffset && window.pageYOffset <= offset[3]) {
+            idx = 2;
+        }
+        else if (offset[3] < window.pageYOffset && window.pageYOffset < offset[4]) {
+            idx = 3;
+        }
+        else {
+            idx = 4;
+        }
+        elMain.style = `transform:translateY(-${offset[idx]}px)` */
 
     </script>
 </body>
