@@ -62,12 +62,12 @@
                     idx--;
                     tagValue = 'black';
                 }
-                // elPtag[idx].style.color = tagValue;
+                elPtag[idx].style.color = tagValue;
                 //컨텐츠가 하단에 위치하면 명령 전달
-                let offset = elPtag[idx].offsetTop - window.innerHeight;
+                /* let offset = elPtag[idx].offsetTop - window.innerHeight;
                 if (offset < window.pageYOffset) {
                     console.log('콘텐츠' + idx)
-                }
+                } */
             }, 50);
 
 
