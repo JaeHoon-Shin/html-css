@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas width="1000" height="900"></canvas>
+
+
+    <script>
+        const canvas = document.querySelector('canvas'),
+            ctx = canvas.getContext('2d');
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, 100, 100);  //x,y,w,h
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(150, 0, 100, 100);
+
+        ctx.arc(350, 50, 50, 0, Math.PI * 2, false) // x,y,r,start deg, end deg, cw
+        ctx.fill();
+
+        ctx.stroke();
+
+        ctx.beginPath();  // 시작
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 10;  //선 두께
+        ctx.lineCap = 'round'  // 선 끝 
+        ctx.lineTo(450, 50); // x , y 선 시작
+        ctx.lineTo(550, 100); //  선 끝
+        ctx.stroke();
+        ctx.closePath();  // 종료
+        ctx.beginPath();
+        ctx.lineTo(600, 200); // x , y 선 시작
+        ctx.lineTo(700, 200); //  선 끝
+        ctx.stroke();
+
+        const image = new Image();
+        image.src = './img/01.jpg';
+        image.addEventListener('load', () => {
+            ctx.drawImage(image, 0, 200, 400, 300);
+        })
+        const video = document.createElement('video');
+        video.src ='./img/vde.mp4';
+        video.muted = true;  // ==  'muted' 
+        video.loop = true;  // == 'loop'
+        video.play();
+
+        video.addEventListener('canplaythrough',drawVideo);
+        function drawVideo(){
+            ctx.drawImage(video,500,200,400,300);
+            requestAnimationFrame(drawVideo)
+        }
+    </script>
+</body>
+
+</html>

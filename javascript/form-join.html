@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article>
+        <h2>정보입력</h2>
+        <form>
+            <ul>
+                <li>
+                    <input type="text" id="id" placeholder="아이디를 입력하세요.">
+                </li>
+                <li>
+                    <input type="password" id="pass" placeholder="비밀번호를 입력하세요.">
+                </li>
+                <li>
+                    <input type="email" id="mail" placeholder="이메일를 입력하세요.">
+                </li>
+                <li>
+                    <input type="tel" id="phone" placeholder="전화번호를 입력하세요.">
+                </li>
+                <li>
+                    <input type="submit" id="submut" value="확인">
+                </li>
+            </ul>
+        </form>
+    </article>
+    <style>
+        /* input{
+            outline: none;
+        } */
+    </style>
+    <script>
+        //정규식 regExr 사이트 
+        window.addEventListener('submit',(e) => {
+            e.preventDefault();
+            let regId = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+            let regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            let regphone = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+            let regPass = /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+            if(!regId.test(id.value)){
+                id.style.outlineColor = 'red';
+                id.focus();
+                return ;
+            }
+            if(!regEmail.test(mail.value)){
+                mail.style.outlineColor = 'red';
+                mail.focus();
+                return ;
+            }
+            if(!regphone.test(phone.value)){
+                phone.style.outlineColor = 'red';
+                phone.focus();
+                return ;
+            }
+            if(!regPass.test(pass.value)){
+                pass.style.outlineColor = 'red';
+                pass.focus();
+                return ;
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <main style="height: 1000px;">
+    <main style="height: 2000px;">
     
         <div></div>
 
@@ -36,30 +36,30 @@
         const b  = document.querySelector('main'),
             di = document.querySelector('div');
         b.addEventListener('mousewheel',function(){
-            console.log(event.wheelDelta)
+            /* console.log(event.wheelDelta) */
             if(event.wheelDelta<0){
                 a++
             }
             else{
                 a--;
             }
-
+            console.log(window.innerHeight)
             
             di.style.transform = `translateY(${a*100}px)`;
         })
+        
+        // let bb = [1,2,3,4,5,6,7];
+        // for(let i = 0; i< 8; i++){
+        //     let num = Number(Math.random()*7).toFixed();
+        //     /* console.log(num) */
+        //     if(bb.includes(num)){
+        //        bb.splice( bb.indexOf(num),1);
+        //        /* console.log(num) */
+        //     }
+        //     else{i--;}
+        // /* bb.splice(bb.indexOf('2'),1); */
 
-        let bb = [1,2,3,4,5,6,7];
-        for(let i = 0; i< 8; i++){
-            let num = Number(Math.random()*7).toFixed();
-            /* console.log(num) */
-            if(bb.includes(num)){
-               bb.splice( bb.indexOf(num),1);
-               /* console.log(num) */
-            }
-            else{i--;}
-        /* bb.splice(bb.indexOf('2'),1); */
-
-    }
+    //}
     </script>
 </body>
 </html>

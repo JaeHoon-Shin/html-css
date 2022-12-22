@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="btn">
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+    </div>
+    <script>
+        const btn = document.querySelectorAll('button');
+        function Test(n){
+            this.num = n;
+            
+            //return this.num
+            //console.log(this.num);
+            // this.print = function(){
+            //     return ++this.num;
+            // }
+        }
+        Test.prototype.print = function(){
+            return ++this.num;
+        }
+        let t1 = [];
+        for(let i = 0 ; i< 10 ; i++){
+            t1.push(new Test(0))
+        }
+
+        btn.forEach(function(el,key){
+            
+            el.addEventListener('click',(e)=>{
+
+                el.textContent = t1[key].print();
+            })
+        })
+
+
+
+
+        let asd = 2
+
+
+        class Test2{
+            constructor(n){
+                this.num = n+asd;
+                console.log(this.num)
+            }
+            print(){
+                return ++this.num;
+            }
+        }
+        let t2 = new Test2(0);
+       // console.log(t2.print(),t2.print(),t2.print());
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

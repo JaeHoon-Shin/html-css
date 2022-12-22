@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article>
+        <h2>약관동의</h2>
+        <form id="form_join" action="form-join.html" method="get">
+            <ul>
+                <li>
+                    <input id="terms" type="checkbox">
+                    <label for="terms"></label>
+                    이용약관 동의
+                </li>
+                <li>
+                    <input id="privacy" type="checkbox">
+                    <label for="privacy"></label>
+                    개인정보수집 동의
+                </li>
+                <li>
+                    <input id="all" type="checkbox">
+                    <label for="all"></label>
+                    전체 동의
+                </li>
+                <li>
+                    <input type="submit" value="확인">
+                </li>
+            </ul>
+        </form>
+    </article>
+    <style>
+        /* input[type="checkbox"]{
+            display: none;
+        } */
+         /* && = and , || =  or , ! = not */
+        input:not([type="submit"]){
+            display: none;
+        }
+        label {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: aliceblue;
+            text-align: center;
+        }
+        label::after{
+            content: "v";
+            font-size: 12px;
+            vertical-align: top;
+
+        }
+        input:checked + label{
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.addEventListener('click', (e) => {
+            //화살표 함수 안에서는 this 사용 안됨
+            // if(all.checked){
+            //     terms.checked = true
+            //     privacy.checked = true
+            // }
+            // else{
+            //     terms.checked = false
+            //     privacy.checked = false
+            // }
+            // terms.checked = all.checked;
+            // privacy.checked = all.checked;
+            if (e.target.id == 'all') {
+                terms.checked = e.target.checked;
+                privacy.checked = e.target.checked;
+
+            }
+            else {
+                if (privacy.checked && terms.checked) {
+                    all.checked = true;
+                }
+                else {
+                    all.checked = false;
+                }
+            }
+            /*  if(e.target.id =='terms'){
+                 if(e.target.checked){
+                     if(privacy.checked){
+                         all.checked = true;
+                     }
+                 }
+                 else{
+                     all.checked = false;
+                 }
+             }
+             if(e.target.id =='privacy'){
+                 if(e.target.checked){
+                     if(terms.checked){
+                         all.checked = true;
+                     }
+                 }
+                 else{
+                     all.checked = false;
+                 }
+             } */
+
+        })
+        window.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!terms.checked) {
+                alert('약관동의바람');
+                return;
+            }
+            if (!privacy.checked) {
+                alert('개인정보동의바람');
+                return;
+            }
+            form_join.submit();
+
+        })
+    </script>
+</body>
+
+</html>
